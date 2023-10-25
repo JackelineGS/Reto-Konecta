@@ -1,9 +1,9 @@
-import { Form } from "../components/form";
+import { Navbar } from '../components/navbar'; 
 
 export function Login() {
   return (
-    <>
-      <Form />
-    </>
+    <Navbar>
+      
+    </Navbar>
   );
 }

@@ -115,8 +115,6 @@ export default function ModalCursos() {
                       )}
                       sx={styleAutocomplete}
                     />
-
-
           </form>
         </Grid>
       </Box>

@@ -6,7 +6,8 @@ import ModalCrearExp from "./components/modalCrearExp";
 import ModalCursos from './components/modalCursos';
 import ModalHabilidades from './components/modalHabilidades';
 import ModalIdiomas from './components/modalIdiomas';
-import ModalInstitucion from './components/modalInstitucion';
+import ModalEstadoValidacion from "./components/modalEstadoValidacion";
+
 
 import "./App.css";
 
@@ -22,7 +23,7 @@ function App() {
           <Route path='/modal/cursos' element={<ModalCursos />}></Route>
           <Route path='/modal/habilidades' element={<ModalHabilidades />}></Route>
           <Route path='/modal/idiomas' element={<ModalIdiomas />}></Route>
-          <Route path='/modal/institucion' element={<ModalInstitucion />}></Route>
+          <Route path='/modal/bienvenida' element={<ModalEstadoValidacion />}></Route>
         </Routes>
       </BrowserRouter>
       {/*<div>
