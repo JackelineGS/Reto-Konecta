@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Login } from "./pages/login";
 import { UploadCv } from "./pages/uploadCv";
+import Formulario from "./pages/uploadCv";
 
 import "./App.css";
 
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />}></Route>
           <Route path='/cargarCv' element={<UploadCv />}></Route>
+          <Route path='/formulario' element={<Formulario />}></Route>
         </Routes>
       </BrowserRouter>
       {/*<div>
