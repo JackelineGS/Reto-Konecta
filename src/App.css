@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+/*estilos de la portada*/
+
+.img_carrusel {
+   height: 200px;
+   width: 200px;
+}
