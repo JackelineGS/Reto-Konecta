@@ -1,11 +1,11 @@
-import {Unete} from '../components/unete';
-import Ofertas from '../components/offers';
+import { Unete } from "../components/unete";
+import Ofertas from "../components/offers";
 
-export default function Portada() {
+export function Portada() {
   return (
     <>
-    <Unete/>
-    <Ofertas/>
-  </>
+      <Unete />
+      <Ofertas />
+    </>
   );
 }
