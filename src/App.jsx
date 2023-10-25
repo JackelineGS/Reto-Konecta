@@ -1,7 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Login } from "./pages/login";
 import { UploadCv } from "./pages/uploadCv";
-import Formulario from "./pages/uploadCv";
+import Formulario from "./components/formulario";
+import ModalCrearExp from "./components/modalCrearExp";
+import ModalCursos from './components/modalCursos';
+import ModalHabilidades from './components/modalHabilidades';
+import ModalIdiomas from './components/modalIdiomas';
+import ModalInstitucion from './components/modalInstitucion';
 
 import "./App.css";
 
@@ -13,6 +18,11 @@ function App() {
           <Route path='/' element={<Login />}></Route>
           <Route path='/cargarCv' element={<UploadCv />}></Route>
           <Route path='/formulario' element={<Formulario />}></Route>
+          <Route path='/modal/exp' element={<ModalCrearExp />}></Route>
+          <Route path='/modal/cursos' element={<ModalCursos />}></Route>
+          <Route path='/modal/habilidades' element={<ModalHabilidades />}></Route>
+          <Route path='/modal/idiomas' element={<ModalIdiomas />}></Route>
+          <Route path='/modal/institucion' element={<ModalInstitucion />}></Route>
         </Routes>
       </BrowserRouter>
       {/*<div>
