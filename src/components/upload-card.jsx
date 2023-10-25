@@ -4,11 +4,21 @@ import Typography from "@mui/material/Typography";
 import illustration_upload from "../assets/img/illustration_upload.png";
 
 export function UploadFile() {
-  const [file, setFile] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [filePreview, setFilePreview] = useState(null);
 
   const handleFileUpload = (e) => {
-    const selectedFile = e.target.files[0];
-    setFile(selectedFile);
+    const file = e.target.files[0];
+
+    if (file) {
+      setSelectedFile(file);
+      // vista previa para el archivo
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setFilePreview(event.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const cardStyles = {
@@ -33,20 +43,34 @@ export function UploadFile() {
 
   return (
     <Card style={cardStyles}>
-      <img
-        src={illustration_upload}
-        alt='imagen-uploadCv'
-        style={imageStyles}
-      />
+      {filePreview ? (
+        <img
+          src={filePreview}
+          alt='file-preview'
+          style={{ maxWidth: "100%" }}
+        />
+      ) : (
+        <>
+          <img
+            src={illustration_upload}
+            alt='imagen-uploadCv'
+            style={imageStyles}
+          />
+          <label htmlFor='file-upload' style={labelStyles}>
+            <Typography variant='h5' component='div' textAlign='center'>
+              Subir mi CV
+            </Typography>
+            <Typography
+              variant='body2'
+              color='text.secondary'
+              textAlign='center'
+            >
+              Formatos permitidos: doc, docx, PDF
+            </Typography>
+          </label>
+        </>
+      )}
 
-      <label htmlFor='file-upload' style={labelStyles}>
-        <Typography variant='h5' component='div' textAlign='center'>
-          Subir mi CV
-        </Typography>
-        <Typography variant='body2' color='text.secondary' textAlign='center'>
-          Formatos permitidos: doc, docx, PDF
-        </Typography>
-      </label>
       <input
         type='file'
         id='file-upload'
