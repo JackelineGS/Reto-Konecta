@@ -22,7 +22,7 @@ export function CreateCvCard() {
     <Card style={cardStyles}>
       <label htmlFor='file-upload' style={labelStyles}>
         <Typography variant='h5' component='div' textAlign='center'>
-          Crear CV
+          Crear mi CV
         </Typography>
         <Typography variant='body2' color='text.secondary' textAlign='center'>
           Podrás crearlo rápidamente.

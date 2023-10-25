@@ -2,7 +2,7 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 
-export function PinkButton() {
+export function WhiteButton() {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -14,19 +14,21 @@ export function PinkButton() {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div /*style={{ display: "flex", justifyContent: "center" }} comentado para agregar más adelante*/
+    >
       <Button
         variant='contained'
         style={{
           width: "200px",
-          textTransform: "none", // No convertir a minúsculas
-          color: "white",
-          backgroundColor: isHovered ? "#ce0f6840" : "#CE0F69",
+          textTransform: "none",
+          color: "#212B36",
+          backgroundColor: isHovered ? "#ECECEC" : "white",
+          border: "solid 1px #919EAB52",
         }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        Siguiente
+        Atrás
       </Button>
     </div>
   );
