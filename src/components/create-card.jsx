@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 
@@ -14,21 +15,27 @@ export function CreateCvCard() {
     height: "260px",
   };
 
+  const linkStyles = {
+    textDecoration: "none", // Quita el subrayado
+    color: "black", // Cambia el color del texto
+  };
+
   const labelStyles = {
     cursor: "pointer",
   };
 
   return (
     <Card style={cardStyles}>
-      <label htmlFor='file-upload' style={labelStyles}>
-        <Typography variant='h5' component='div' textAlign='center'>
-          Crear mi CV
-        </Typography>
-        <Typography variant='body2' color='text.secondary' textAlign='center'>
-          Podrás crearlo rápidamente.
-        </Typography>
-      </label>
-      <input type='file' id='file-upload' style={{ display: "none" }} />
+      <Link to='/formulario' style={linkStyles}>
+        <label style={labelStyles}>
+          <Typography variant='h5' component='div' textAlign='center'>
+            Crear mi CV
+          </Typography>
+          <Typography variant='body2' color='text.secondary' textAlign='center'>
+            Podrás crearlo rápidamente.
+          </Typography>
+        </label>
+      </Link>
     </Card>
   );
 }
