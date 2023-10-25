@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Login } from "./pages/login";
+import Portada from "./pages/portada";
 
 import "./App.css";
 
@@ -9,6 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Login />}></Route>
+          <Route path='/portada' element={<Portada />}></Route>
         </Routes>
       </BrowserRouter>
       {/*<div>
