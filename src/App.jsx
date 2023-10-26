@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UploadCv } from "./pages/uploadCv";
-import Formulario from "./pages/formulario";
+import Formulario from "./components/formulario";
 import { Navbar } from "./components/navbar";
 import { BackButton } from "./components/backButton";
 import { Portada } from "./pages/portada";
@@ -20,6 +20,7 @@ import { Navbar } from "./components/navbar";
 import ModalInstitucion from './components/modalInstitucion';*/
 
 import "./App.css";
+//import { SideBar } from "./components/sideBar";
 
 function App() {
   return (
