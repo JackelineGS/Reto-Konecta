@@ -1,58 +1,53 @@
+import React, { useEffect, useState } from "react";
+import { Card, CardContent, Typography, Grid, Button, Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
+function Offers() {
+  const [offers, setOffers] = useState([]);
+  const navigate = useNavigate()
+  // const [loading, setLoading] = useState(true);
 
-import React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+  const url =
+    "https://iezopofihj.execute-api.us-east-1.amazonaws.com/dev/offers";
 
-const ConvocatoriaCard = ({ titulo, descripcion }) => {
+  const fetchOffers = (url) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setOffers(data.data); // Almacenamos los datos de la API en el estado
+        console.log(data.data);
+
+        // setLoading(false); // Actualizamos el estado para indicar que la carga ha terminado
+      })
+      .catch((error) => console.error("Error al obtener las ofertas", error));
+  };
+
+  useEffect(() => {
+    fetchOffers(url);
+  }, []);
+
+  // if (loading) {
+  //   return <div>Cargando ofertas...</div>;
+  // }
+
   return (
-    <Card sx={{width:180, margin:2}} >
-      <CardContent>
-        <Typography variant="h5" component="div">
-          {titulo}
-        </Typography>
-        <Typography variant="body2" color="textSecondary">
-          {descripcion}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" color="primary">
-          Conoce más
-        </Button>
-      </CardActions>
-    </Card>
-  );
-};
-
-const convocatorias = [
-    {
-      titulo: "Convocatoria 1",
-      descripcion: "Descripción de la convocatoria 1",
-    },
-    {
-      titulo: "Convocatoria 2",
-      descripcion: "Descripción de la convocatoria 2",
-    },
-    // Agrega más convocatorias según sea necesario
-  ];
-
-  
-const Ofertas = () => {
-  return (
-    <Box display={'flex'}>
-      {convocatorias.map((convocatoria, index) => (
-        <ConvocatoriaCard
-          key={index}
-          titulo={convocatoria.titulo}
-          descripcion={convocatoria.descripcion}
-        />
+    <Grid container spacing={2}>
+      {offers.map((offer, index) => (
+        <Grid item xs={12} sm={6} md={4} key={index}>
+          <Card variant="outlined">
+            <CardContent>
+              <Typography variant="h6">TITLE: {offer.title}</Typography>
+              <Typography variant="h6">CATEGORY: {offer.category}</Typography>
+              <Typography variant="h6">ID: {offer.id}</Typography>
+              {/* <Link to={`/ofertas/${offer.id}`}> */}
+                <Button onClick={() => navigate(`/ofertas/${offer.id}`)}  variant="contained">CONOCE MÁS</Button>
+              {/* </Link> */}
+            </CardContent>
+          </Card>
+        </Grid>
       ))}
-    </Box>
+    </Grid>
   );
-};
+}
 
-export default Ofertas;
+export default Offers;
