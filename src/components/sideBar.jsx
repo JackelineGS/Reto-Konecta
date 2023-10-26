@@ -12,8 +12,6 @@ import ListItemText from "@mui/material/ListItemText";
 import DescriptionIcon from "@mui/icons-material/Description";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import BarChartIcon from "@mui/icons-material/BarChart";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 

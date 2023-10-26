@@ -1,18 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UploadCv } from "./pages/uploadCv";
-import Formulario from "./pages/formulario";
+import Formulario from "./components/formulario";
 import { Navbar } from "./components/navbar";
 import { BackButton } from "./components/backButton";
 import { Portada } from "./pages/portada";
-
+import Offers from "./funciones/funciones";
+import OffersId from "./funciones/offersId";
 /*import ModalCrearExp from "./components/modalCrearExp";
 import ModalCursos from './components/modalCursos';
 import ModalHabilidades from './components/modalHabilidades';
 import ModalIdiomas from './components/modalIdiomas';
 import ModalInstitucion from './components/modalInstitucion';
 import { Navbar } from "./components/navbar";
-import Offers from './funciones/funciones'
-import OffersId from "./funciones/offersId";
+
 import ModalInstitucion from './components/modalInstitucion';*/
 
 import "./App.css";
@@ -22,7 +22,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar></Navbar>
         <Navbar />
         <BackButton />
         <Routes>
