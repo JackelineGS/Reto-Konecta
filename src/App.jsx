@@ -12,11 +12,13 @@ import ModalIdiomas from './components/modalIdiomas';
 import ModalInstitucion from './components/modalInstitucion';*/
 
 import "./App.css";
+import { SideBar } from "./components/sideBar";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <SideBar />
         <Navbar />
         <BackButton />
         <Routes>
