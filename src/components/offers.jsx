@@ -20,7 +20,7 @@ const ConvocatoriaCard = ({ titulo, descripcion }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="l" color="#FFFFFF">
           Conoce más
         </Button>
       </CardActions>
