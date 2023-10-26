@@ -12,12 +12,19 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/lab": "^5.0.0-alpha.150",
     "@mui/material": "^5.14.15",
+<<<<<<< HEAD
     "flowise-embed": "^1.0.13",
     "flowise-embed-react": "^1.0.2",
+=======
+    "pdf-parse": "^1.1.1",
+    "pdfjs-dist": "^3.11.174",
+>>>>>>> 9b9651d6cf37290c4612499cf30de52e9f91a993
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-material-ui-carousel": "^3.4.2",
+    "react-pdf": "^7.5.1",
     "react-router-dom": "^6.17.0"
   },
   "devDependencies": {

@@ -87,15 +87,12 @@ const styleSubtitle = {
   display: "flex",
 };
 
-export default function ModalCursos() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+export default function ModalCursos(props) {
+  const { open, onClose } = props;
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
-      <Modal open={open} onClose={handleClose}>
+      <Modal open={open} onClose={onClose}>
         <Box sx={style}>
           <Grid
             container
@@ -121,7 +118,7 @@ export default function ModalCursos() {
                 fullWidth
                 disablePortal
                 id='combo-box-demo'
-                //options={top100Films}
+                options={["Básico", "Intermedio", "Avanzado"]}
                 renderInput={(params) => (
                   <TextField {...params} label='Nivel' />
                 )}
