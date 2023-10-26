@@ -1,12 +1,10 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   Card,
   CardContent,
   Typography,
-  Grid,
-  TextField,
-  Button,
+  Grid
 } from "@mui/material";
 
 function OffersId() {

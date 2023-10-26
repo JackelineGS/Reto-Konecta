@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { SimpleContainer } from "../components/simpleContainer";
 import { CustomizedSteppers } from "../components/stepper";
 import { UploadFile } from "../components/upload-card";

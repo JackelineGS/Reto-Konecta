@@ -30,6 +30,44 @@ function Offers() {
   //   return <div>Cargando ofertas...</div>;
   // }
 
+  // NOTIFICACION DE EVALUACIONES
+
+
+async function sendPostRequest() {
+
+  const hostHackLab = 'https://iezopofihj.execute-api.us-east-1.amazonaws.com/dev/notifications/evaluations';
+
+  const requestData = {
+    recipientPhoneNumber: "+51925474137",
+    user: "Sandy",
+    job: "Asistente de comunicaciones",
+    path: "GyQwuk-IGC-TEST-290923"
+  };
+
+  try {
+    const response = await fetch(hostHackLab, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestData)
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    console.log('Solicitud POST exitosa');
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+sendPostRequest();
+
+
+
+
   return (
     <Grid container spacing={2}>
       {offers.map((offer, index) => (
