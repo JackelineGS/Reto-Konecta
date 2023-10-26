@@ -16,7 +16,7 @@ import OffersId from "./funciones/offersId";
 import ModalInstitucion from './components/modalInstitucion';*/
 
 import "./App.css";
-import { SideBar } from "./components/sideBar";
+//import { SideBar } from "./components/sideBar";
 
 function App() {
   return (
