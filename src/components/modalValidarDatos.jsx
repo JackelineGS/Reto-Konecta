@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 const style = {
@@ -105,6 +106,8 @@ export default function ModalValidarDatos() {
   // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const navigate = useNavigate()
+  const { id } = useParams();
+  console.log(id)
 
   const fetchValidarDatos = async (document) => {
     var requestOptions = {
@@ -116,7 +119,7 @@ export default function ModalValidarDatos() {
       response = response.data
       console.log(response)
       if(response.exists === false){
-        navigate("/modal/validado")
+        navigate(`/modal/validado/${id}`)
       } else {
         console.log("otro modal")
       }

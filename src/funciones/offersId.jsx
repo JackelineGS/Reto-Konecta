@@ -19,7 +19,7 @@ function OffersId() {
   const [loading, setLoading] = useState(false);
 
   const openModalBienvenida = () => {
-    navigate("/modal/bienvenida", { state: { offersData: offers } });
+    navigate(`/modal/bienvenida/${id}`, { state: { offersData: offers } });
   };
   
 

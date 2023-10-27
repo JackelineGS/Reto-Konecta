@@ -3,6 +3,9 @@ import { Typography, Modal, Box, Button, Grid, Container } from '@mui/material'
 // import estado from "../assets/img/estado.png";
 import { styled } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
+import { BubbleChat } from 'flowise-embed-react'
+import { useParams } from "react-router-dom";
+
 
 
 const style = {
@@ -71,11 +74,18 @@ export default function ModalEstadoValidacion() {
     const handleClose = () => setOpen(false);
     const navigate = useNavigate()
 
-
+    const { id } = useParams();
+    console.log(id)
 
     const UploadCv = () => {
-      navigate('/cargarCv')
+      navigate(`/cargarCv/${id}`)
     }
+
+     const App = () => {
+      return (
+            <BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />
+        );
+    };
 
   return (
     <div>
@@ -105,6 +115,9 @@ export default function ModalEstadoValidacion() {
         </Grid>
       </Box>
     </Modal>
+    <BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />
+
   </div>
+  
   )
 }

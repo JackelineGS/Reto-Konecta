@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 // import ModalValidarDatos from "./modalValidarDatos";
 // import validar from "../assets/img/validar";
 
@@ -74,6 +75,8 @@ const CssButton = styled(Button)({
 
 export default function ModalBienvenida() {
   const [open, setOpen] = useState(true);
+  const { id } = useParams();
+  console.log(id)
   // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const navigate = useNavigate()
@@ -86,7 +89,7 @@ export default function ModalBienvenida() {
   };
 
   const openValidarDatos = () => {
-    navigate("/modal/bienvenida/validacion");
+    navigate(`/modal/bienvenida/validacion/${id}`);
   };
 
   return (
