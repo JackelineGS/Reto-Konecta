@@ -3,7 +3,7 @@ import Offers from "../components/offers";
 // import Offers from './funciones/funciones'
 
 
-export function Portada() {
+export default function Portada() {
   return (
     <>
       <Unete />

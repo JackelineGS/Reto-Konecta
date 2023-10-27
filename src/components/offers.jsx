@@ -18,7 +18,7 @@ const ConvocatoriaCard = ({ titulo, descripcion }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="l" color="#FFFFFF">
+        <Button sx={{bgcolor:"#FFFFF"}}>
           Conoce más
         </Button>
       </CardActions>
