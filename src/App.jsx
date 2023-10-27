@@ -9,12 +9,10 @@ import { Portada } from "./pages/portada";
 import ModalCursos from './components/modalCursos';
 import ModalHabilidades from './components/modalHabilidades';
 import ModalIdiomas from './components/modalIdiomas';
-import ModalInstitucion from './components/modalInstitucion';
-import { Navbar } from "./components/navbar";
+import ModalInstitucion from './components/modalInstitucion';*/
 import Offers from './funciones/funciones'
 import OffersId from "./funciones/offersId";
-import ModalInstitucion from './components/modalInstitucion';*/
-
+import ModalInstitucion from './components/modalInstitucion';
 import "./App.css";
 
 function App() {
