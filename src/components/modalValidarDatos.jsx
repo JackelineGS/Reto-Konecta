@@ -1,5 +1,5 @@
 // import * as React from 'react';
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Typography,
   Modal,
@@ -9,11 +9,10 @@ import {
   TextField,
   InputLabel,
   Select,
-  MenuItem
+  MenuItem,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
-
 
 const style = {
   position: "absolute",
@@ -98,54 +97,50 @@ const styleAutocomplete = {
 };
 
 export default function ModalValidarDatos() {
-
   const [isFormComplete, setIsFormComplete] = useState(false);
-  const [data, setData] = useState({tipoDocumento:""})
+  const [data, setData] = useState({ tipoDocumento: "" });
   const [open, setOpen] = useState(true);
   // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const fetchValidarDatos = async (document) => {
     var requestOptions = {
-      method: 'GET',
+      method: "GET",
     };
-    
-  let response = await  fetch(`https://iezopofihj.execute-api.us-east-1.amazonaws.com/dev/applicants/doc/${document}`, requestOptions)
-      response = await response.json()
-      response = response.data
-      console.log(response)
-      if(response.exists === false){
-        navigate("/modal/validado")
-      } else {
-        console.log("otro modal")
-      }
-  }
 
-
-  const openModalValidado = () => {
-    fetchValidarDatos(data.numeroDocumento)
-    ;
+    let response = await fetch(
+      `https://iezopofihj.execute-api.us-east-1.amazonaws.com/dev/applicants/doc/${document}`,
+      requestOptions
+    );
+    response = await response.json();
+    response = response.data;
+    console.log(response);
+    if (response.exists === false) {
+      navigate("/modal/validado");
+    } else {
+      console.log("otro modal");
+    }
   };
 
-
-
+  const openModalValidado = () => {
+    fetchValidarDatos(data.numeroDocumento);
+  };
 
   const handleFieldChange = (event) => {
     const { name, value } = event.target;
-    const datos ={...data, [name]: value}
-    setData( {...data, [name]: value})   
-    console.log(data) 
+    const datos = { ...data, [name]: value };
+    setData({ ...data, [name]: value });
+    console.log(data);
 
     // const isNombresComplete = nombres.trim() !== "";
     // const isApellidosComplete = apellidos.trim() !== "";
     // const isTipoDocumentoComplete = tipoDocumento.trim() !== "";
     // const isNumeroDocumentoComplete = numeroDocumento.trim() !== "";
     // Comprueba si todos los campos están completos
-    const isFormComplete =
-    Object.values(datos).length == 4 
-    console.log(isFormComplete)
-      // isNombresComplete && isApellidosComplete && isTipoDocumentoComplete && isNumeroDocumentoComplete;
+    const isFormComplete = Object.values(datos).length == 4;
+    console.log(isFormComplete);
+    // isNombresComplete && isApellidosComplete && isTipoDocumentoComplete && isNumeroDocumentoComplete;
 
     setIsFormComplete(isFormComplete);
   };
@@ -157,10 +152,10 @@ export default function ModalValidarDatos() {
         <Box sx={style}>
           <Grid
             container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
-            alignContent="center"
+            direction='column'
+            justifyContent='center'
+            alignItems='center'
+            alignContent='center'
           >
             <Typography sx={styleLetra}>
               Iniciamos validando tus datos personales
@@ -168,51 +163,48 @@ export default function ModalValidarDatos() {
             <form>
               <CssTextField
                 fullWidth
-                variant="outlined"
-                label="Nombres"
-                name="nombres"
+                variant='outlined'
+                label='Nombres'
+                name='nombres'
                 onChange={handleFieldChange}
               />
               <CssTextField
                 fullWidth
-                variant="outlined"
-                label="Apellidos"
-                name="apellidos"
+                variant='outlined'
+                label='Apellidos'
+                name='apellidos'
                 onChange={handleFieldChange}
               />
-              <InputLabel id="demo-simple-select-label" >
+              <InputLabel id='demo-simple-select-label'>
                 Tipo de documento
               </InputLabel>
               <Select
                 sx={styleAutocomplete}
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                label="Tipo de documento"
-                name="tipoDocumento"
+                labelId='demo-simple-select-label'
+                id='demo-simple-select'
+                label='Tipo de documento'
+                name='tipoDocumento'
                 value={data.tipoDocumento}
                 onChange={handleFieldChange}
               >
-                <MenuItem value="DNI">DNI</MenuItem>
-                <MenuItem value="Carnet de Extranjeria">
+                <MenuItem value='DNI'>DNI</MenuItem>
+                <MenuItem value='Carnet de Extranjeria'>
                   Carnet de Extranjeria
                 </MenuItem>
               </Select>
 
               <CssTextField
                 fullWidth
-                variant="outlined"
-                label="Número de documento"
-                name="numeroDocumento"
-                type="number"
+                variant='outlined'
+                label='Número de documento'
+                name='numeroDocumento'
+                type='number'
                 inputProps={{
-                  max: 12
+                  max: 12,
                 }}
                 onChange={handleFieldChange}
               />
-              <CssButton
-               disabled={!isFormComplete}
-              onClick={openModalValidado}
-              >
+              <CssButton disabled={!isFormComplete} onClick={openModalValidado}>
                 Siguiente
               </CssButton>
             </form>

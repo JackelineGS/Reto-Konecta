@@ -9,13 +9,12 @@ export function UploadFile() {
   const [filePreview, setFilePreview] = useState(null);
   const [pdfText, setPdfText] = useState(null);
   pdfjsLib.GlobalWorkerOptions.workerSrc =
-    '../../node_modules/pdfjs-dist/build/pdf.worker.js';
+    "../../node_modules/pdfjs-dist/build/pdf.worker.js";
 
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
-    console.log(file)
-    console.log(pdfjsLib)
-
+    console.log(file);
+    console.log(pdfjsLib);
 
     if (file) {
       setSelectedFile(file);
@@ -26,7 +25,7 @@ export function UploadFile() {
 
         // Extraer texto del PDF
         // const pdfFile = new Uint8Array(event.target.result);
-        const pdfFile = URL.createObjectURL(file)
+        const pdfFile = URL.createObjectURL(file);
         pdfjsLib.getDocument(pdfFile).promise.then((pdfDoc) => {
           let fullText = "";
           for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
@@ -42,7 +41,7 @@ export function UploadFile() {
               });
             });
           }
-          console.log(fullText)
+          console.log(fullText);
         });
       };
       reader.readAsDataURL(file);
@@ -74,24 +73,24 @@ export function UploadFile() {
       {filePreview ? (
         <img
           src={filePreview}
-          alt="documento cargado"
+          alt='documento cargado'
           style={{ maxWidth: "100%" }}
         />
       ) : (
         <>
           <img
             src={illustration_upload}
-            alt="imagen-uploadCv"
+            alt='imagen-uploadCv'
             style={imageStyles}
           />
-          <label htmlFor="file-upload" style={labelStyles}>
-            <Typography variant="h5" component="div" textAlign="center">
+          <label htmlFor='file-upload' style={labelStyles}>
+            <Typography variant='h5' component='div' textAlign='center'>
               Subir mi CV
             </Typography>
             <Typography
-              variant="body2"
-              color="text.secondary"
-              textAlign="center"
+              variant='body2'
+              color='text.secondary'
+              textAlign='center'
             >
               Formatos permitidos: doc, docx, PDF
             </Typography>
@@ -100,15 +99,15 @@ export function UploadFile() {
       )}
 
       <input
-        type="file"
-        id="file-upload"
+        type='file'
+        id='file-upload'
         onChange={handleFileUpload}
         style={{ display: "none" }}
       />
 
       {pdfText && (
         <div>
-          <Typography variant="h6">Texto del PDF:</Typography>
+          <Typography variant='h6'>Texto del PDF:</Typography>
           <pre>{pdfText}</pre>
         </div>
       )}

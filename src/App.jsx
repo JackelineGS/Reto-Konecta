@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UploadCv } from "./pages/uploadCv";
-import Formulario from "./components/formulario";
+import { FormularioCv } from "./pages/formularioCv";
 import { Navbar } from "./components/navbar";
 import { BackButton } from "./components/backButton";
 import { Portada } from "./pages/portada";
@@ -8,8 +8,6 @@ import OffersId from "./funciones/offersId";
 import ModalBienvenida from "./components/modalBienvenida";
 import ModalValidarDatos from "./components/modalValidarDatos";
 import ModalEstadoValidacion from "./components/modalEstadovalidacion";
-
-
 
 /*import ModalCrearExp from "./components/modalCrearExp";
 import ModalCursos from './components/modalCursos';
@@ -31,11 +29,17 @@ function App() {
         <Routes>
           <Route path='/' element={<Portada />}></Route>
           <Route path='/ofertas/:id' element={<OffersId />}></Route>
-          <Route path="/modal/bienvenida" element={<ModalBienvenida/>}></Route>
-          <Route path="/modal/bienvenida/validacion" element={<ModalValidarDatos/>}></Route>
-          <Route path="/modal/validado" element={<ModalEstadoValidacion/>}></Route>
+          <Route path='/modal/bienvenida' element={<ModalBienvenida />}></Route>
+          <Route
+            path='/modal/bienvenida/validacion'
+            element={<ModalValidarDatos />}
+          ></Route>
+          <Route
+            path='/modal/validado'
+            element={<ModalEstadoValidacion />}
+          ></Route>
           <Route path='/cargarCv' element={<UploadCv />}></Route>
-          <Route path='/formulario' element={<Formulario />}></Route>
+          <Route path='/formulario' element={<FormularioCv />}></Route>
         </Routes>
       </BrowserRouter>
     </>
