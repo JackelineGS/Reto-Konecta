@@ -1,21 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UploadCv } from "./pages/uploadCv";
-import Formulario from "./pages/formulario";
-import { BackButton } from "./components/backButton";
+import Formulario from "./components/formulario";
+//import { BackButton } from "./components/backButton";
 import { Portada } from "./pages/portada";
 import  Ofertas  from "./components/offers";
 import  OffersId  from "./funciones/offersId";
 import ListaPostulantes from "./admin/Adcomponents/listaPostulantes";
 import Tabla from "./admin/Adcomponents/tabla";
-import Formulario from "./components/formulario";
-import { BackButton } from "./components/backButton";
-import { Portada } from "./pages/portada";
-import OffersId from "./funciones/offersId";
 import ModalBienvenida from "./components/modalBienvenida";
 import ModalValidarDatos from "./components/modalValidarDatos";
 import ModalEstadoValidacion from "./components/modalEstadovalidacion";
-
-
+import { Navbar } from "./components/navbar";
 
 /*import ModalCrearExp from "./components/modalCrearExp";
 import ModalCursos from './components/modalCursos';
@@ -26,13 +21,14 @@ import { Navbar } from "./components/navbar";
 import ModalInstitucion from './components/modalInstitucion';*/
 
 import "./App.css";
+//import { BackButton } from "./components/backButton";
 //import { SideBar } from "./components/sideBar";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <BackButton />
+        <Navbar/>
         <Routes>
           <Route path='/' element={<Portada />}></Route>
           <Route path='/ofertas' element={<Ofertas />}></Route>

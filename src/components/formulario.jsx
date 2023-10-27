@@ -19,6 +19,7 @@ import ModalInstitucion from "./modalInstitucion";
 import ModalCursos from "../components/modalCursos";
 import ModalHabilidades from "./modalHabilidades";
 import ModalIdiomas from "./modalIdiomas";
+import { BackButton } from "../components/backButton";
 
 const CssTextField = styled(TextField)({
   display: "block",
@@ -125,6 +126,38 @@ export default function Formulario() {
       setModalIdiomas(false);
     }
   };
+
+  const CssButton = styled(Button)({
+  backgroundColor: "#CE0F69",
+  color: "white",
+  borderRadius: "8px",
+  padding: "6px 16px",
+  cursor: "pointer",
+  margin: "5px",
+  "&:hover": {
+    backgroundColor: "#B2BAC2",
+  },
+  "&:disabled": {
+    backgroundColor: "#D9D8D8",
+    cursor: "default",
+  },
+});
+
+const CssButton2 = styled(Button)({
+  backgroundColor: "#D9D8D8",
+  color: "#545454",
+  borderRadius: "8px",
+  padding: "6px 16px",
+  cursor: "pointer",
+  margin: "5px",
+  "&:hover": {
+    backgroundColor: "#B2BAC2",
+  },
+  "&:disabled": {
+    backgroundColor: "#D9D8D8",
+    cursor: "default",
+  },
+});
   // valores formulario
 
   /*  const handleGuardarClick = () => {
@@ -160,17 +193,18 @@ export default function Formulario() {
 
   return (
     <>
+      <BackButton />
       <CustomizedSteppers />
       <Grid
         container
-        direction='column'
-        alignItems='center'
-        justifyContent='center'
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
         style={{
           margin: "2rem",
         }}
       >
-        <Grid position='static' item xs={3}>
+        <Grid position="static" item xs={3}>
           <Paper
             style={{
               overflowY: "scroll",
@@ -185,7 +219,7 @@ export default function Formulario() {
                   padding: "1rem",
                   borderRadius: "24px",
                   width: "664px",
-                  height: "334px",
+                  height: "400px",
                 }}
               >
                 <div
@@ -201,32 +235,46 @@ export default function Formulario() {
                   <form>
                     <CssTextField
                       fullWidth
-                      variant='outlined'
-                      label='Nombres'
-                      name='nombres'
+                      variant="outlined"
+                      label="Nombres"
+                      name="nombres"
                     />
                     <CssTextField
                       fullWidth
-                      variant='outlined'
-                      label='Apellidos'
-                      name='apellidos'
+                      variant="outlined"
+                      label="Apellidos"
+                      name="apellidos"
                     />
                     <Autocomplete
                       fullWidth
                       disablePortal
-                      id='combo-box-demo'
+                      id="combo-box-demo"
                       options={["DNI", "Pasaporte"]}
                       renderInput={(params) => (
-                        <TextField {...params} label='Tipo' />
+                        <TextField {...params} label="Tipo" />
                       )}
                     />
 
                     <CssTextField
                       fullWidth
-                      variant='outlined'
-                      label='N° documento'
-                      name='documento'
+                      variant="outlined"
+                      label="N° documento"
+                      name="documento"
                     />
+                    <div
+                      style={{
+                        float: "right",
+                        marginLeft: 0,
+                        marginTop: "10px",
+                      }}
+                    >
+                      <CssButton2 variant="contained" type="button">
+                        Cancelar
+                      </CssButton2>
+                      <CssButton variant="contained" type="button">
+                        Guardar
+                      </CssButton>
+                    </div>
                   </form>
                 </CardContent>
               </Card>
@@ -237,7 +285,7 @@ export default function Formulario() {
                   padding: "1rem",
                   borderRadius: "24px",
                   width: "664px",
-                  height: "480px",
+                  height: "530px",
                 }}
               >
                 <div
@@ -253,62 +301,66 @@ export default function Formulario() {
                   <form>
                     <CssTextField
                       fullWidth
-                      variant='outlined'
-                      label='Numero de celular'
-                      name='celular'
+                      variant="outlined"
+                      label="Numero de celular"
+                      name="celular"
                       value={datos.celular}
                       onChange={handleInputChange}
                     />
                     <CssTextField
                       fullWidth
-                      variant='outlined'
-                      label='Correo'
-                      name='correo'
+                      variant="outlined"
+                      label="Correo"
+                      name="correo"
                       value={datos.correo}
                       onChange={handleInputChange}
                     />
                     <CssTextField
                       fullWidth
-                      variant='outlined'
-                      label='Departamento'
-                      name='departamento'
+                      variant="outlined"
+                      label="Departamento"
+                      name="departamento"
                       value={datos.departamento}
                       onChange={handleInputChange}
                     />
                     <CssTextField
                       fullWidth
-                      variant='outlined'
-                      label='Provincia'
-                      name='provincia'
+                      variant="outlined"
+                      label="Provincia"
+                      name="provincia"
                       value={datos.provincia}
                       onChange={handleInputChange}
                     />
                     <CssTextField
                       fullWidth
-                      variant='outlined'
-                      label='Distrito'
-                      name='distrito'
+                      variant="outlined"
+                      label="Distrito"
+                      name="distrito"
                       value={datos.distrito}
                       onChange={handleInputChange}
                     />
 
                     <CssTextField
                       fullWidth
-                      variant='outlined'
-                      label='Dirección'
-                      name='direccion'
+                      variant="outlined"
+                      label="Dirección"
+                      name="direccion"
                       value={datos.direccion}
                       onChange={handleInputChange}
                     />
                     <div
                       style={{
-                        display: "flex",
-                        justifyContent: "end",
-                        gap: "10px",
+                        float: "right",
+                        marginLeft: 0,
+                        marginTop: "10px",
                       }}
                     >
-                      <button /*onClick={handleGuardarClick}*/>Guardar</button>
-                      <button>Cancelar</button>
+                      <CssButton2 variant="contained" type="button">
+                        Cancelar
+                      </CssButton2>
+                      <CssButton variant="contained" type="button">
+                        Guardar
+                      </CssButton>
                     </div>
                   </form>
                 </CardContent>
@@ -328,15 +380,15 @@ export default function Formulario() {
                   <Accordion>
                     <AccordionSummary>
                       <FormControlLabel
-                        value='Con experiencia'
+                        value="Con experiencia"
                         control={
                           <Radio
                             checked={isModalExp}
                             onChange={handleOptionChange}
-                            value='Con experiencia'
+                            value="Con experiencia"
                           />
                         }
-                        label='Con experiencia'
+                        label="Con experiencia"
                       />
                     </AccordionSummary>
                   </Accordion>
@@ -344,15 +396,15 @@ export default function Formulario() {
                 <CardContent>
                   <Accordion>
                     <FormControlLabel
-                      value='Sin experiencia'
+                      value="Sin experiencia"
                       control={
                         <Radio
                           checked={!isModalExp}
                           onChange={handleOptionChange}
-                          value='Sin experiencia'
+                          value="Sin experiencia"
                         />
                       }
-                      label='Sin experiencia'
+                      label="Sin experiencia"
                     />
                   </Accordion>
                 </CardContent>
