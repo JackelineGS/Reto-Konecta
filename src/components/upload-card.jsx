@@ -191,7 +191,7 @@ export function UploadFile() {
 
         {/* {pdfText && (
         <div>
-          <Typography variant="h6">Texto del PDF:</Typography>
+          <Typography variant='h6'>Texto del PDF:</Typography>
           <pre>{pdfText}</pre>
         </div>
       )} */}

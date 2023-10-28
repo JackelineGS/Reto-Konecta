@@ -19,7 +19,7 @@ export function PinkButton() {
         variant='contained'
         style={{
           width: "200px",
-          textTransform: "none", // No convertir a minúsculas
+          textTransform: "none",
           color: "white",
           backgroundColor: isHovered ? "#ce0f6840" : "#CE0F69",
         }}

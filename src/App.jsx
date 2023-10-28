@@ -1,17 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UploadCv } from "./pages/uploadCv";
-import Formulario from "./components/formulario";
+import { FormularioCv } from "./pages/formularioCv";
 import { Navbar } from "./components/navbar";
 import { BackButton } from "./components/backButton";
 import { Portada } from "./pages/portada";
+import { PagesOffers } from "./pages/pagesOffers";
 import OffersId from "./funciones/offersId";
 import ModalBienvenida from "./components/modalBienvenida";
 import ModalValidarDatos from "./components/modalValidarDatos";
 import ModalEstadoValidacion from "./components/modalEstadovalidacion";
 import ModalValidado from "./components/modalValidado"
 import { ModalApto } from "./components/modalApto";
-
-
 
 /*import ModalCrearExp from "./components/modalCrearExp";
 import ModalCursos from './components/modalCursos';
@@ -34,6 +33,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Portada />}></Route>
           <Route path='/ofertas/:id' element={<OffersId />}></Route>
+<<<<<<< HEAD
           <Route path="/modal/bienvenida/:id" element={<ModalBienvenida/>}></Route>
           <Route path="/modal/bienvenida/validacion/:id" element={<ModalValidarDatos/>}></Route>
           <Route path="/modal/validado/:id" element={<ModalEstadoValidacion/>}></Route>
@@ -41,6 +41,20 @@ function App() {
           <Route path="/modal/validando/:id/apto" element={<ModalApto/>}></Route>
           <Route path='/cargarCv/:id' element={<UploadCv />}></Route>
           <Route path='/formulario' element={<Formulario />}></Route>
+=======
+          <Route path='/modal/bienvenida' element={<ModalBienvenida />}></Route>
+          <Route
+            path='/modal/bienvenida/validacion'
+            element={<ModalValidarDatos />}
+          ></Route>
+          <Route
+            path='/modal/validado'
+            element={<ModalEstadoValidacion />}
+          ></Route>
+          <Route path='/cargarCv' element={<UploadCv />}></Route>
+          <Route path='/formulario' element={<FormularioCv />}></Route>
+          <Route path='/ofertas' element={<PagesOffers />}></Route>
+>>>>>>> 52a30912fa033afb9588f3054cd37373d1d17669
         </Routes>
       </BrowserRouter>
     </>
