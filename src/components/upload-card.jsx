@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import illustration_upload from "../assets/img/illustration_upload.png";
+import { BubbleChat } from "flowise-embed-react";
 import * as pdfjsLib from "pdfjs-dist/build/pdf";
 import { SuccessAlert } from "./successAlert";
 import { CircularProgress, Container } from "@mui/material";
@@ -150,6 +151,13 @@ export function UploadFile() {
   const labelStyles = {
     cursor: "pointer",
   };
+
+
+  const App = () => {
+    return (
+        <BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />
+    );
+};
 
   return (
     <Container>
