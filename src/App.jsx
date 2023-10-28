@@ -3,7 +3,6 @@ import { UploadCv } from "./pages/uploadCv";
 import { FormularioCv } from "./pages/formularioCv";
 import { Navbar } from "./components/navbar";
 import { BackButton } from "./components/backButton";
-import { Portada } from "./pages/portada";
 import { PagesOffers } from "./pages/pagesOffers";
 import OffersId from "./funciones/offersId";
 import ModalBienvenida from "./components/modalBienvenida";
@@ -16,16 +15,10 @@ import "./App.css";
 import { ModalEvaluaciones } from "./components/modalEvaluaciones";
 import  BasicModal  from "./components/basicModal.jsx";
 import Formulario from "./components/formulario";
-//import { BackButton } from "./components/backButton";
-import { Portada } from "./pages/portada";
 import  Ofertas  from "./components/offers";
-import  OffersId  from "./funciones/offersId";
 import ListaPostulantes from "./admin/Adcomponents/listaPostulantes";
 import Tabla from "./admin/Adcomponents/tabla";
-import ModalBienvenida from "./components/modalBienvenida";
-import ModalValidarDatos from "./components/modalValidarDatos";
-import ModalEstadoValidacion from "./components/modalEstadovalidacion";
-import { Navbar } from "./components/navbar";
+import {Portada} from "./pages/portada"
 
 
 
