@@ -4,6 +4,7 @@ import { FormularioCv } from "./pages/formularioCv";
 import { Navbar } from "./components/navbar";
 import { BackButton } from "./components/backButton";
 import { Portada } from "./pages/portada";
+import { PagesOffers } from "./pages/pagesOffers";
 import OffersId from "./funciones/offersId";
 import ModalBienvenida from "./components/modalBienvenida";
 import ModalValidarDatos from "./components/modalValidarDatos";
@@ -40,6 +41,7 @@ function App() {
           ></Route>
           <Route path='/cargarCv' element={<UploadCv />}></Route>
           <Route path='/formulario' element={<FormularioCv />}></Route>
+          <Route path='/ofertas' element={<PagesOffers />}></Route>
         </Routes>
       </BrowserRouter>
     </>

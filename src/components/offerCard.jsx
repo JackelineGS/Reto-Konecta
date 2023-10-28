@@ -15,7 +15,7 @@ const styles = {
     width: "290px",
     height: "120px",
     borderRadius: "12px",
-    backgroundColor: "#00968F1A",
+    backgroundColor: "white",
   },
   icon: {
     fontSize: "18px",
@@ -29,7 +29,7 @@ const styles = {
   },
 };
 
-export function OfferCardBlue() {
+export function OfferCard() {
   return (
     <Card style={styles.cardContainer}>
       <CardContent>
