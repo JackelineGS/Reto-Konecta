@@ -1,51 +1,48 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Login } from "./pages/login";
 import { UploadCv } from "./pages/uploadCv";
 import Formulario from "./components/formulario";
-import ModalCrearExp from "./components/modalCrearExp";
+import { Navbar } from "./components/navbar";
+import { BackButton } from "./components/backButton";
+import { Portada } from "./pages/portada";
+import OffersId from "./funciones/offersId";
+import ModalBienvenida from "./components/modalBienvenida";
+import ModalValidarDatos from "./components/modalValidarDatos";
+import ModalEstadoValidacion from "./components/modalEstadovalidacion";
+import ModalValidado from "./components/modalValidado"
+import { ModalApto } from "./components/modalApto";
+
+
+
+/*import ModalCrearExp from "./components/modalCrearExp";
 import ModalCursos from './components/modalCursos';
 import ModalHabilidades from './components/modalHabilidades';
 import ModalIdiomas from './components/modalIdiomas';
 import ModalEstadoValidacion from "./components/modalEstadoValidacion";
 
+import { Navbar } from "./components/navbar";
+import ModalInstitucion from './components/modalInstitucion';*/
 
 import "./App.css";
+//import { SideBar } from "./components/sideBar";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Navbar />
+        <BackButton />
         <Routes>
-          <Route path='/' element={<Login />}></Route>
-          <Route path='/cargarCv' element={<UploadCv />}></Route>
+          <Route path='/' element={<Portada />}></Route>
+          <Route path='/ofertas/:id' element={<OffersId />}></Route>
+          <Route path="/modal/bienvenida/:id" element={<ModalBienvenida/>}></Route>
+          <Route path="/modal/bienvenida/validacion/:id" element={<ModalValidarDatos/>}></Route>
+          <Route path="/modal/validado/:id" element={<ModalEstadoValidacion/>}></Route>
+          <Route path="/modal/validando/:id" element={<ModalValidado/>}></Route>
+          <Route path="/modal/validando/:id/apto" element={<ModalApto/>}></Route>
+          <Route path='/cargarCv/:id' element={<UploadCv />}></Route>
           <Route path='/formulario' element={<Formulario />}></Route>
-          <Route path='/modal/exp' element={<ModalCrearExp />}></Route>
-          <Route path='/modal/cursos' element={<ModalCursos />}></Route>
-          <Route path='/modal/habilidades' element={<ModalHabilidades />}></Route>
-          <Route path='/modal/idiomas' element={<ModalIdiomas />}></Route>
-          <Route path='/modal/bienvenida' element={<ModalEstadoValidacion />}></Route>
         </Routes>
       </BrowserRouter>
-      {/*<div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>*/}
     </>
   );
 }
