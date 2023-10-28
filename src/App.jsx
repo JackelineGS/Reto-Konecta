@@ -10,8 +10,10 @@ import ModalValidarDatos from "./components/modalValidarDatos";
 import ModalEstadoValidacion from "./components/modalEstadovalidacion";
 import ModalValidado from "./components/modalValidado"
 import { ModalApto } from "./components/modalApto";
-
-
+import { ModalNoApto } from "./components/modalNoApto";
+import "./App.css";
+import { ModalEvaluaciones } from "./components/modalEvaluaciones";
+import  BasicModal  from "./components/basicModal.jsx";
 
 /*import ModalCrearExp from "./components/modalCrearExp";
 import ModalCursos from './components/modalCursos';
@@ -20,8 +22,6 @@ import ModalIdiomas from './components/modalIdiomas';
 import ModalInstitucion from './components/modalInstitucion';
 import { Navbar } from "./components/navbar";
 import ModalInstitucion from './components/modalInstitucion';*/
-
-import "./App.css";
 //import { SideBar } from "./components/sideBar";
 
 function App() {
@@ -37,7 +37,10 @@ function App() {
           <Route path="/modal/bienvenida/validacion/:id" element={<ModalValidarDatos/>}></Route>
           <Route path="/modal/validado/:id" element={<ModalEstadoValidacion/>}></Route>
           <Route path="/modal/validando/:id" element={<ModalValidado/>}></Route>
+          <Route path="/modal/redirigiendo/:id" element={<BasicModal/>}></Route>
           <Route path="/modal/validando/:id/apto" element={<ModalApto/>}></Route>
+          <Route path="/modal/validando/:id/noapto" element={<ModalNoApto/>}></Route>
+          <Route path="/modal/validando/:id/apto/evaluaciones" element={<ModalEvaluaciones/>}></Route>
           <Route path='/cargarCv/:id' element={<UploadCv />}></Route>
           <Route path='/formulario' element={<Formulario />}></Route>
         </Routes>

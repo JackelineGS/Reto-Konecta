@@ -30,10 +30,13 @@ export function UploadFile() {
   console.log(id);
 
   const openModal = () => {
-    console.log("me ejecuto?");
     console.log(pdfText, "aqui cvText");
     sessionStorage.setItem("cv", pdfText);
     navigate(`/modal/validando/${id}`);
+  };
+
+  const openRedirigiendo = () => {
+    navigate(`/modal/redirigiendo/${id}`);
   };
 
   //flowise
@@ -132,6 +135,7 @@ export function UploadFile() {
     }
   };
 
+
   const cardStyles = {
     display: "flex",
     flexDirection: "column",
@@ -212,7 +216,7 @@ export function UploadFile() {
           <CircularProgress color="secondary" />
         </div>
       ) : (
-        <button className="btn btn-pink" onClick={openModal}>
+        <button onClick={showSuccessAlert ? openModal : openRedirigiendo}>
           Siguiente
         </button>
       )}
