@@ -19,6 +19,7 @@ import { Navbar } from "./components/navbar";
 import ModalInstitucion from './components/modalInstitucion';*/
 
 import "./App.css";
+//import { BackButton } from "./components/backButton";
 //import { SideBar } from "./components/sideBar";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <BackButton />
         <Routes>
           <Route path='/' element={<Portada />}></Route>
+          <Route path='/ofertas' element={<PagesOffers />}></Route>
           <Route path='/ofertas/:id' element={<OffersId />}></Route>
           <Route path='/modal/bienvenida' element={<ModalBienvenida />}></Route>
           <Route
@@ -41,7 +43,6 @@ function App() {
           ></Route>
           <Route path='/cargarCv' element={<UploadCv />}></Route>
           <Route path='/formulario' element={<FormularioCv />}></Route>
-          <Route path='/ofertas' element={<PagesOffers />}></Route>
         </Routes>
       </BrowserRouter>
     </>

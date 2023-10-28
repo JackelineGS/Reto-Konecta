@@ -1,14 +1,15 @@
-import React, { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
   Card,
   CardContent,
   Typography,
   Grid,
-  Stack, Button
+  Stack, 
+  Button,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
+import { BackButton } from "../components/backButton";
 
 function OffersId() {
   const { id } = useParams();
@@ -43,7 +44,9 @@ function OffersId() {
   }, [url]);
 
   return (
+    
     <Fragment>
+      <BackButton/>
       {loading && <div>Cargando oferta...</div>}
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6} md={4}>

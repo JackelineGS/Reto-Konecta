@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import {
   Typography,
   Modal,
@@ -6,7 +7,8 @@ import {
   Button,
   Grid,
   TextField,
-  Autocomplete,
+  MenuItem,
+  Select
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
@@ -122,7 +124,19 @@ const CssButton2 = styled(Button)({
 });
 
 export default function ModalIdiomas(props) {
-  const { open, onClose } = props;
+  const { open, onClose, onSave } = props;
+  const [institucion, setInstitucion] = useState("");
+  const [nivel, setNivel] = useState("");
+
+  const handleGuardarIdioma = () => {
+    const data = {
+      institucion,
+      nivel,
+    };
+    onSave(data);
+    onClose();
+  };
+ 
 
   return (
     <div>
@@ -144,29 +158,34 @@ export default function ModalIdiomas(props) {
                 fullWidth
                 variant='outlined'
                 label='Nombre de la institución'
-                name='cargo'
+                name='institucion'
+                value={institucion}
+                onChange={(e) => setInstitucion(e.target.value)}
               />
-              <Autocomplete
+               <Select
+                sx={styleAutocomplete}
                 fullWidth
                 disablePortal
-                id='combo-box-demo'
-                options={[
-                  "Básico (A2)",
-                  "Intermedio (B1)",
-                  "Intermedio (B2)",
-                  "Avanzado(C1)",
-                  "Avanzado(C2)",
-                ]}
-                renderInput={(params) => (
-                  <TextField {...params} label='Nivel' />
-                )}
-                sx={styleAutocomplete}
-              />
+                id="combo-box-demo"
+                name="nivel"
+                value={nivel}
+                onChange={(e) => setNivel(e.target.value)}
+              >
+                <MenuItem value="basicoA2">Básico (A2)</MenuItem>
+                <MenuItem value="intermedioB1">Intermedio (B1)</MenuItem>
+                <MenuItem value="intermedioB2">Intermedio (B2)</MenuItem>
+                <MenuItem value="intermedioC1">Avanzado (C1)</MenuItem>
+                <MenuItem value="intermedioC2">Avanzado (C2)</MenuItem>
+              </Select>
               <div style={{ float: "right", marginLeft: 0, marginTop: "60px" }}>
                 <CssButton2 variant='contained' type='submit'>
                   Cancelar
                 </CssButton2>
-                <CssButton variant='contained' type='submit'>
+                <CssButton 
+                variant='contained' 
+                type='submit'
+                onClick={handleGuardarIdioma}  
+                >
                   Guardar
                 </CssButton>
               </div>

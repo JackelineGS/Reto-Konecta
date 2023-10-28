@@ -1,12 +1,14 @@
 import * as React from "react";
+import { useState } from "react";
 import {
   Typography,
   Modal,
   Box,
   Button,
+  MenuItem,
+  Select,
   Grid,
   TextField,
-  Autocomplete,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
@@ -87,8 +89,57 @@ const styleSubtitle = {
   display: "flex",
 };
 
+const CssButton = styled(Button)({
+  backgroundColor: "#CE0F69",
+  color: "white",
+  borderRadius: "8px",
+  padding: "6px 16px",
+  cursor: "pointer",
+  margin: "5px",
+
+  "&:hover": {
+    backgroundColor: "#B2BAC2",
+  },
+
+  "&:disabled": {
+    backgroundColor: "#D9D8D8",
+    cursor: "default",
+  },
+});
+
+const CssButton2 = styled(Button)({
+  backgroundColor: "#D9D8D8",
+  color: "#545454",
+  borderRadius: "8px",
+  padding: "6px 16px",
+  cursor: "pointer",
+  margin: "5px",
+
+  "&:hover": {
+    backgroundColor: "#B2BAC2",
+  },
+
+  "&:disabled": {
+    backgroundColor: "#D9D8D8",
+    cursor: "default",
+  },
+});
+
 export default function ModalCursos(props) {
-  const { open, onClose } = props;
+  const { open, onClose, onSave } = props;
+  const [curso, setCurso] = useState("");
+  const [nivel, setNivel] = useState("");
+
+
+  const handleGuardarCurso = () => {
+    const data = {
+      curso,
+      nivel,
+    };
+    onSave(data);
+    onClose();
+  };
+
 
   return (
     <div>
@@ -111,19 +162,36 @@ export default function ModalCursos(props) {
               <CssTextField
                 fullWidth
                 variant='outlined'
-                label='Curso, Especializaciones'
-                name='cargo'
+                label='curso'
+                name='curso'
+                value={curso}
+                onChange={(e) => setCurso(e.target.value)}
               />
-              <Autocomplete
+              <Select
+                sx={styleAutocomplete}
                 fullWidth
                 disablePortal
-                id='combo-box-demo'
-                options={["Básico", "Intermedio", "Avanzado"]}
-                renderInput={(params) => (
-                  <TextField {...params} label='Nivel' />
-                )}
-                sx={styleAutocomplete}
-              />
+                id="combo-box-demo"
+                name="nivel"
+                value={nivel}
+                onChange={(e) => setNivel(e.target.value)}
+              >
+                <MenuItem value="basico">Básico</MenuItem>
+                <MenuItem value="intermedio">Intermedio</MenuItem>
+                <MenuItem value="avanzado">Avanzado</MenuItem>
+              </Select>
+              <div style={{ float: "right", marginLeft: 0, marginTop: "60px" }}>
+                <CssButton2 variant="contained" type="submit">
+                  Cancelar
+                </CssButton2>
+                <CssButton 
+                variant="contained" 
+                type="submit"
+                onClick={handleGuardarCurso}
+                >
+                  Guardar
+                </CssButton>
+              </div>
             </form>
           </Grid>
         </Box>
