@@ -5,8 +5,7 @@ import Carrusel from '../components/carrusel'
 export function Unete() {
   return (
     <>
-      <Box
-      >
+      <Box>
       <Carrusel></Carrusel>
       </Box>
     </>

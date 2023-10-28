@@ -3,7 +3,7 @@ import { UploadCv } from "./pages/uploadCv";
 import Formulario from "./pages/formulario";
 import { Navbar } from "./components/navbar";
 import { BackButton } from "./components/backButton";
-import  Portada from "./pages/portada";
+import Portada from "./pages/portada";
 console.log("Portada");
 
 /*import ModalCrearExp from "./components/modalCrearExp";
@@ -20,7 +20,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <Navbar></Navbar> 
         <Navbar />
         <BackButton />
         <Routes>
