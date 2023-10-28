@@ -27,6 +27,8 @@ import ModalValidarDatos from "./components/modalValidarDatos";
 import ModalEstadoValidacion from "./components/modalEstadovalidacion";
 import { Navbar } from "./components/navbar";
 
+
+
 /*import ModalCrearExp from "./components/modalCrearExp";
 import ModalCursos from './components/modalCursos';
 import ModalHabilidades from './components/modalHabilidades';
