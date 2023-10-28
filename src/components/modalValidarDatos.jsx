@@ -132,8 +132,6 @@ export default function ModalValidarDatos() {
   };
 
 
-
-
   const handleFieldChange = (event) => {
     const { name, value } = event.target;
     const datos ={...data, [name]: value}

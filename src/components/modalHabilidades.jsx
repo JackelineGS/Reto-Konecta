@@ -1,13 +1,18 @@
 import * as React from "react";
+import { useState } from "react";
 import {
   Typography,
   Modal,
   Box,
   Button,
   Grid,
-  Card,
-  List,
+  FormControlLabel,
   Checkbox,
+  Card,
+  Container,
+  FormControl,
+  FormLabel,
+  FormGroup,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
@@ -35,17 +40,6 @@ const styleLetra = {
   borde: "none",
   justifyContent: "center",
   alignItems: "center",
-  display: "flex",
-};
-
-const styleTitle = {
-  color: "#181818",
-  fontFamily: "Barlow",
-  fontWeight: "600",
-  fontSize: "14px",
-  alignItems: "left",
-  margin: "1rem",
-  textAling: "left",
   display: "flex",
 };
 
@@ -105,56 +99,38 @@ const CssButton2 = styled(Button)({
   },
 });
 
+
+
 export default function ModalHabilidades(props) {
-  const items = [
-    {
-      title: "Comunicación efectiva",
-      checked: false,
-    },
-    {
-      title: "Empatía",
-      checked: false,
-    },
-    {
-      title: "Escucha activa",
-      checked: false,
-    },
-    {
-      title: "Negociación",
-      checked: false,
-    },
-    {
-      title: "Actitud Positiva",
-      checked: false,
-    },
-    {
-      title: "Adaptabilidad",
-      checked: false,
-    },
-    {
-      title: "Iniciativa",
-      checked: false,
-    },
-    {
-      title: "Rapidez de respuesta",
-      checked: false,
-    },
-    {
-      title: "Proactividad",
-      checked: false,
-    },
-  ];
-  const { open, onClose } = props;
+  
+  const { open, onClose, onChange, onSave } = props;
+  const [skills, setskills] = useState([])
+  console.log({skills})
+
+  const handleSkillChange = (e) => {
+    const index = skills.indexOf(e.target.value) 
+    if(index === -1) {
+      setskills([...skills, e.target.value])
+    } else {
+      setskills(skills.filter(skill => skill !== e.target.value))
+    };
+  };
+
+  const handleClose = (e) => {
+    onSave(skills);
+    onClose();
+  }
+  
   return (
     <div>
       <Modal open={open} onClose={onClose}>
         <Box sx={style}>
           <Grid
             container
-            direction='column'
-            justifyContent='center'
-            alignItems='center'
-            alignContent='center'
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            alignContent="center"
           >
             <Box
               style={{
@@ -165,31 +141,132 @@ export default function ModalHabilidades(props) {
             >
               <Typography sx={styleLetra}>Habilidades</Typography>
               <Typography sx={styleSubtitle}>
-                Selecciona las 5 habilidades que mejor te identifican
+                Selecciona las habilidades que mejor te identifican
               </Typography>
-              <List>
-                {items.map((item) => (
-                  <Card key={item.title} sx={styleCard}>
-                    <div
-                      style={{
-                        display: "flex",
-                      }}
-                    >
-                      <Checkbox checked={item.checked} />
-                      <Typography sx={styleTitle}>{item.title}</Typography>
-                    </div>
-                  </Card>
-                ))}
-              </List>
+              <Container sx={styleCard}>
 
-              <div style={{ float: "right", marginLeft: 0, marginTop: "60px" }}>
-                <CssButton2 variant='contained' type='submit'>
+                <Box>
+                  <Card>
+                    <FormControl>
+                      <FormLabel></FormLabel>
+                      <FormGroup>
+                        <FormControlLabel
+                          label="Comunicación Efectiva"
+                          name="comunicacion"
+                          value="comunicacion"
+                          control={
+                            <Checkbox
+                              checked={skills.includes('comunicacion')}
+                              onChange={handleSkillChange}
+                            />
+                          }
+                        />
+                        <FormControlLabel
+                          label="Empatía"
+                          name="empatia"
+                          value="empatia"
+                          control={
+                            <Checkbox
+                              checked={skills.includes('empatia')}
+                              onChange={handleSkillChange}
+                            />
+                          }
+                        />
+                        <FormControlLabel
+                          label="Escucha Activa"
+                          name="escucha"
+                          value="escucha"
+                          control={
+                            <Checkbox
+                              checked={skills.includes('escucha')}
+                              onChange={handleSkillChange}
+                            />
+                          }
+                        />
+                        <FormControlLabel
+                          label="Negociación"
+                          name="negociacion"
+                          value="negociacion"
+                          control={
+                            <Checkbox
+                              checked={skills.includes('negociacion')}
+                              onChange={handleSkillChange}
+                            />
+                          }
+                        />
+                        <FormControlLabel
+                          label="Actitud Positiva"
+                          name="actitud"
+                          value="actitud"
+                          control={
+                            <Checkbox
+                              checked={skills.includes('actitud')}
+                              onChange={handleSkillChange}
+                            />
+                          }
+                        />
+                         <FormControlLabel
+                          label="Adaptabilidad"
+                          name="adaptabilidad"
+                          value="adaptabilidad"
+                          control={
+                            <Checkbox
+                              checked={skills.includes('adaptabilidad')}
+                              onChange={handleSkillChange}
+                            />
+                          }
+                        />
+                         <FormControlLabel
+                          label="Iniciativa"
+                          name="iniciativa"
+                          value="iniciativa"
+                          control={
+                            <Checkbox
+                              checked={skills.includes('iniciativa')}
+                              onChange={handleSkillChange}
+                            />
+                          }
+                        />
+                         <FormControlLabel
+                          label="Rapidez de respuesta"
+                          name="rapidez"
+                          value="rapidez"
+                          control={
+                            <Checkbox
+                              checked={skills.includes('rapidez')}
+                              onChange={handleSkillChange}
+                            />
+                          }
+                        />
+                         <FormControlLabel
+                          label="Proactividad"
+                          name="proactividad"
+                          value="proactividad"
+                          control={
+                            <Checkbox
+                              checked={skills.includes('proactividad')}
+                              onChange={handleSkillChange}
+                            />
+                          }
+                        />
+
+                      </FormGroup>
+                    </FormControl>
+                  </Card>
+                </Box>
+                <div style={{ float: "right", marginLeft: 0, marginTop: "60px" }}>
+                <CssButton2 variant="contained" type="submit">
                   Cancelar
                 </CssButton2>
-                <CssButton variant='contained' type='submit'>
+                <CssButton 
+                variant="contained" 
+                type="submit"
+                onClick={handleClose}
+                >
                   Guardar
                 </CssButton>
               </div>
+              </Container>
             </Box>
           </Grid>
         </Box>
