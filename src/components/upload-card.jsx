@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import illustration_upload from "../assets/img/illustration_upload.png";
+import { BubbleChat } from "flowise-embed-react";
 import * as pdfjsLib from "pdfjs-dist/build/pdf";
 import { SuccessAlert } from "./successAlert";
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, Container } from "@mui/material";
 import { WarningAlert } from "./warningAlert";
 import { ErrorAlert } from "./errorAlert";
-import { Container } from "react-bootstrap";
 import { PinkButton } from "./pink-button";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -156,6 +156,13 @@ export function UploadFile() {
     cursor: "pointer",
   };
 
+
+  const App = () => {
+    return (
+        <BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />
+    );
+};
+
   return (
     <Container>
       <Card style={cardStyles}>
@@ -196,7 +203,7 @@ export function UploadFile() {
 
         {/* {pdfText && (
         <div>
-          <Typography variant="h6">Texto del PDF:</Typography>
+          <Typography variant='h6'>Texto del PDF:</Typography>
           <pre>{pdfText}</pre>
         </div>
       )} */}

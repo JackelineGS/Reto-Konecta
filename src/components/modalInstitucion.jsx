@@ -6,7 +6,8 @@ import {
   Button,
   Grid,
   TextField,
-  Autocomplete,
+  MenuItem,
+  Select
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
@@ -122,68 +123,82 @@ const styleAutocomplete = {
 };
 
 export default function ModalInstitucion(props) {
-  const { open, onClose } = props;
-
+  const { open, onClose, onSave } = props;
   const [formacion, setFormacion] = useState("");
-  const [nombreInstitucion, setNombreInstitucion] = useState("");
+  const [nombrei, setInstitucion] = useState("");
   const [estado, setEstado] = useState("");
-
-  const handleInfoInstitucion = () => {
-    const dataInstitucion = {
+  
+  
+  const handleGuardarInstitucion = () => {
+    const data = {
       formacion,
-      nombreInstitucion,
+      nombrei,
       estado,
     };
+    onSave(data);
     onClose();
   };
+
+
   return (
     <div>
       <Modal open={open} onClose={onClose}>
         <Box sx={style}>
           <Grid
             container
-            direction='column'
-            justifyContent='center'
-            alignItems='center'
-            alignContent='center'
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            alignContent="center"
           >
             <Typography sx={styleLetra}>Institucion</Typography>
             <Typography sx={styleSubtitle}>
               Ingresa los datos de tu último grado de formación
             </Typography>
             <form>
-              <Autocomplete
+              <Select
+                sx={styleAutocomplete}
                 fullWidth
                 disablePortal
-                id='combo-box-demo'
-                options={["Secundaria", "Técnica", "Universitaria"]}
-                //options={top100Films}
-                renderInput={(params) => (
-                  <TextField {...params} label='Formación' />
-                )}
-                sx={styleAutocomplete}
-              />
+                id="combo-box-demo"
+                name="formacion"
+                value={formacion}
+                onChange={(e) => setFormacion(e.target.value)}
+              >
+                <MenuItem value="secundaria">Secundaria</MenuItem>
+                <MenuItem value="tecnica">Técnica</MenuItem>
+                <MenuItem value="universitaria">Universitaria</MenuItem>
+              </Select>
               <CssTextField
                 fullWidth
-                variant='outlined'
-                label='Nombre de la institución'
-                name='cargo'
+                variant="outlined"
+                label="Nombre de la institución"
+                name="nombrei"
+                value={nombrei}
+                onChange={(e) => setInstitucion(e.target.value)}
               />
-              <Autocomplete
+              <Select
+                sx={styleAutocomplete}
                 fullWidth
                 disablePortal
-                id='combo-box-demo'
-                options={["Finalizado", "En curso", "Suspendido"]}
-                renderInput={(params) => (
-                  <TextField {...params} label='Estado' />
-                )}
-                sx={styleAutocomplete}
-              />
+                id="combo-box-demo"
+                name="estado"
+                value={estado}
+                onChange={(e) => setEstado(e.target.value)}
+              >
+                <MenuItem value="finalizado">Finalizado</MenuItem>
+                <MenuItem value="encurso">En curso</MenuItem>
+                <MenuItem value="suspendido">Suspendido</MenuItem>
+              </Select>
               <div style={{ float: "right", marginLeft: 0, marginTop: "60px" }}>
-                <CssButton2 variant='contained' type='submit'>
+                <CssButton2 variant="contained" type="submit">
                   Cancelar
                 </CssButton2>
-                <CssButton variant='contained' type='submit'>
+                <CssButton 
+                variant="contained" 
+                type="submit"
+                onClick={handleGuardarInstitucion}
+                >
                   Guardar
                 </CssButton>
               </div>

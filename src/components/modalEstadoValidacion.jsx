@@ -1,12 +1,7 @@
-import React, { useState } from "react";
+import * as React from 'react';
 import { Typography, Modal, Box, Button, Grid, Container } from '@mui/material'
-// import estado from "../assets/img/estado.png";
+import estado from "../assets/img/estado.png";
 import { styled } from '@mui/material/styles';
-import { useNavigate } from "react-router-dom";
-import { BubbleChat } from 'flowise-embed-react'
-import { useParams } from "react-router-dom";
-
-
 
 const style = {
     position: 'absolute',
@@ -67,30 +62,13 @@ const style = {
   });
 
 export default function ModalEstadoValidacion() {
-
     
-    const [open, setOpen] = useState(true);
-    // const handleOpen = () => setOpen(true);
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const navigate = useNavigate()
-
-    const { id } = useParams();
-    console.log(id)
-
-    const UploadCv = () => {
-      navigate(`/cargarCv/${id}`)
-    }
-
-     const App = () => {
-      return (
-            <BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />
-        );
-    };
-    App()
-
   return (
     <div>
-    {/* <Button onClick={handleOpen}>Open modal</Button> */}
+    <Button onClick={handleOpen}>Open modal</Button>
     <Modal
       open={open}
       onClose={handleClose}
@@ -108,17 +86,14 @@ export default function ModalEstadoValidacion() {
                         alignItems:'cente'
                     }}
                 >
-                {/* <img src={estado} alt='konecta-logo' className='logo logo-2' width='300px' height='215px' /> */}
+                <img src={estado} alt='konecta-logo' className='logo logo-2' width='300px' height='215px' />
                 </Container>
                 <Typography sx={styleLetra}>Validación</Typography>
-                <Typography sx={styleSubtitle}>Hola Postulante,  validamos exitosamente tus datos  personales y puedes continuar.</Typography>
-                <CssButton onClick={UploadCv} >Continuar</CssButton>
+                <Typography sx={styleSubtitle}>Hola Carlos,  validamos exitosamente tus datos  personales y puedes continuar.</Typography>
+                <CssButton>Continuar</CssButton>
         </Grid>
       </Box>
     </Modal>
-    <BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />
-
   </div>
-  
   )
 }

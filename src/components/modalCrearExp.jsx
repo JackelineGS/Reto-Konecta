@@ -119,7 +119,6 @@ const CssButton2 = styled(Button)({
 
 export default function ModalCrearExp(props) {
   const { open, onClose, onSave } = props;
-
   const [cargo, setCargo] = useState("");
   const [empresa, setEmpresa] = useState("");
   const [fechaInicio, setFechaInicio] = useState("");
