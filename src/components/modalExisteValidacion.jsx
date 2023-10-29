@@ -1,7 +1,9 @@
-import * as React from 'react';
+import React, { useState } from "react";
 import { Typography, Modal, Box, Button, Grid, Container } from '@mui/material'
 import estado from "../assets/img/estado.png";
 import { styled } from '@mui/material/styles';
+import { useNavigate } from "react-router-dom";
+
 
 const style = {
     position: 'absolute',
@@ -61,14 +63,20 @@ const style = {
     },
   });
 
-export default function ModalEstadoValidacion() {
+export default function ModalExisteValidacion() {
+
+  const navigate = useNavigate()
+
+  const modalInicio = () => {
+    navigate('/')
+  }
     
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
+    const [open, setOpen] = useState(true);
+    // const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
   return (
     <div>
-    <Button onClick={handleOpen}>Open modal</Button>
+    {/* <Button onClick={handleOpen}>Open modal</Button> */}
     <Modal
       open={open}
       onClose={handleClose}
@@ -88,9 +96,9 @@ export default function ModalEstadoValidacion() {
                 >
                 <img src={estado} alt='konecta-logo' className='logo logo-2' width='300px' height='215px' />
                 </Container>
-                <Typography sx={styleLetra}>Validación</Typography>
-                <Typography sx={styleSubtitle}>Hola Carlos,  validamos exitosamente tus datos  personales y puedes continuar.</Typography>
-                <CssButton>Continuar</CssButton>
+                <Typography sx={styleLetra}>Te encuentras en Evaluacion</Typography>
+                <Typography sx={styleSubtitle}>Hola Postulante, actualmente te encuentras en un proceso de evaluación para Asesor de ATC Rímac Seguros, estas a tiempo de resolver las  pruebas y continuar tu proceso.</Typography>
+                <CssButton onClick={modalInicio} >Entendido</CssButton>
         </Grid>
       </Box>
     </Modal>

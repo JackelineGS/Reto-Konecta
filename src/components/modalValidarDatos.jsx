@@ -107,7 +107,7 @@ export default function ModalValidarDatos() {
   const handleClose = () => setOpen(false);
   const navigate = useNavigate()
   const { id } = useParams();
-  console.log(id)
+  // console.log(id)
 
   const fetchValidarDatos = async (document) => {
     var requestOptions = {
@@ -117,12 +117,12 @@ export default function ModalValidarDatos() {
   let response = await  fetch(`https://iezopofihj.execute-api.us-east-1.amazonaws.com/dev/applicants/doc/${document}`, requestOptions)
       response = await response.json()
       response = response.data
-      console.log(response)
+      // console.log(response)
       if(response.exists === false){
         navigate(`/modal/validado/${id}`)
-      } else {
-        console.log("otro modal")
-      }
+      } else if (response.exists === true){
+        navigate(`/modal/validando/`)
+      } 
   }
 
 
@@ -136,7 +136,7 @@ export default function ModalValidarDatos() {
     const { name, value } = event.target;
     const datos ={...data, [name]: value}
     setData( {...data, [name]: value})   
-    console.log(data) 
+    // console.log(data) 
 
     // const isNombresComplete = nombres.trim() !== "";
     // const isApellidosComplete = apellidos.trim() !== "";

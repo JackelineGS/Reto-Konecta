@@ -19,6 +19,11 @@ import  Ofertas  from "./components/offers";
 import ListaPostulantes from "./admin/Adcomponents/listaPostulantes";
 import Tabla from "./admin/Adcomponents/tabla";
 import {Portada} from "./pages/portada"
+// import BasicModal from "./components/basicModal";
+import ModalExisteValidacion from "./components/modalExisteValidacion";
+// import { ModalNoApto } from "./components/modalNoApto";
+// import { ModalEvaluaciones } from "./components/modalEvaluaciones"
+// import Formulario from "./components/formulario";
 
 
 
@@ -42,12 +47,13 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path='/' element={<Portada />}></Route>
-          <Route path='/ofertas' element={<Ofertas />}></Route>
+          {/* <Route path='/ofertas' element={<Ofertas />}></Route> */}
           <Route path='/ofertas/:id' element={<OffersId />}></Route>
           <Route path="/modal/bienvenida/:id" element={<ModalBienvenida/>}></Route>
           <Route path="/modal/bienvenida/validacion/:id" element={<ModalValidarDatos/>}></Route>
           <Route path="/modal/validado/:id" element={<ModalEstadoValidacion/>}></Route>
           <Route path="/modal/validando/:id" element={<ModalValidado/>}></Route>
+          <Route path="/modal/validando/" element={<ModalExisteValidacion/>}></Route>
           <Route path="/modal/redirigiendo/:id" element={<BasicModal/>}></Route>
           <Route path="/modal/validando/:id/apto" element={<ModalApto/>}></Route>
           <Route path="/modal/validando/:id/noapto" element={<ModalNoApto/>}></Route>
@@ -66,8 +72,8 @@ function App() {
           <Route path='/cargarCv' element={<UploadCv />}></Route>
           <Route path='/formulario' element={<FormularioCv />}></Route>
           <Route path='/ofertas' element={<PagesOffers />}></Route>
-          <Route path='/listaPostulantes' element={<ListaPostulantes />}></Route>
-          <Route path='/tabla' element={<Tabla />}></Route>
+          {/* <Route path='/listaPostulantes' element={<ListaPostulantes />}></Route>
+          <Route path='/tabla' element={<Tabla />}></Route> */}
         </Routes>
       </BrowserRouter>
     </>
