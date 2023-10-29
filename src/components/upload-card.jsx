@@ -8,7 +8,7 @@ import { SuccessAlert } from "./successAlert";
 import { CircularProgress, Container } from "@mui/material";
 import { WarningAlert } from "./warningAlert";
 import { ErrorAlert } from "./errorAlert";
-import { PinkButton } from "./pink-button";
+import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
@@ -156,6 +156,15 @@ export function UploadFile() {
     cursor: "pointer",
   };
 
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
 //   const App = () => {
 //     return (
@@ -223,9 +232,17 @@ export function UploadFile() {
           <CircularProgress color="secondary" />
         </div>
       ) : (
-        <button onClick={showSuccessAlert ? openModal : openRedirigiendo}>
+        <Button variant='contained'
+        style={{
+          width: "200px",
+          textTransform: "none",
+          color: "white",
+          backgroundColor: isHovered ? "#ce0f6840" : "#CE0F69",
+        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave} onClick={showSuccessAlert ? openModal : openRedirigiendo}>
           Siguiente
-        </button>
+        </Button>
       )}
     </Container>
   );

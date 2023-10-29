@@ -20,7 +20,8 @@ import ModalCursos from "../components/modalCursos";
 import ModalHabilidades from "./modalHabilidades";
 import ModalIdiomas from "./modalIdiomas";
 import { MenuItem } from "@mui/material";
-
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CssTextField = styled(TextField)({
   display: "block",
@@ -127,52 +128,52 @@ const styleAutocomplete = {
   marginBottom: "1.5rem",
 };
 
-
 export default function Formulario() {
+  const { id } = useParams();
+  const navigate = useNavigate();
 
-// Datos generales
-    const [datosgenerales, setData] = useState({
-      nombres: "",
-      apellidos: "",
-      tipoDocumento: "",
-      numeroDocumento: "",
+  // Datos generales
+  const [datosgenerales, setData] = useState({
+    nombres: "",
+    apellidos: "",
+    tipoDocumento: "",
+    numeroDocumento: "",
+  });
+
+  const guardarDatos = (e) => {
+    const { name, value } = e.target;
+    const datos = { ...datosgenerales, [name]: value };
+    setData({
+      ...datosgenerales,
+      [name]: value,
     });
-  
-    const guardarDatos = (e) => {
-      const { name, value } = e.target;
-      const datos ={...datosgenerales, [name]: value}
-      setData({
-        ...datosgenerales,
-        [name]: value,
-      });
-      const datosPersonales = Object.values(datos)
-      console.log(datosPersonales)
-      console.log(datos)
-    };
+    const datosPersonales = Object.values(datos);
+    console.log(datosPersonales);
+    console.log(datos);
+  };
 
   // Datos de contacto
-    const [datoscontacto, setDatos] = useState({
-      celular: "",
-      correo: "",
-      departamento: "",
-      provincia: "",
-      distrito: "",
-      direccion: ""
+  const [datoscontacto, setDatos] = useState({
+    celular: "",
+    correo: "",
+    departamento: "",
+    provincia: "",
+    distrito: "",
+    direccion: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    const datos = { ...datoscontacto, [name]: value };
+    setDatos({
+      ...datoscontacto,
+      [name]: value,
     });
-  
-    const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      const datos ={...datoscontacto, [name]: value}
-      setDatos({
-        ...datoscontacto,
-        [name]: value,
-      });
-      const datosContacto = Object.values(datos)
-      console.log(datosContacto)
-      console.log(datos)
-      
-    };
-  
+    const datosContacto = Object.values(datos);
+    console.log(datosContacto);
+    console.log(datos);
+  };
+
   // Experiencia
 
   const [isModalExp, setIsModalExp] = useState(false);
@@ -184,48 +185,48 @@ export default function Formulario() {
       setIsModalExp(false);
     }
   };
-    const [experiencia, setExperiencia] = useState(null);
-    const handleGuardarDatos = (data) => {
-      setExperiencia(data);
-      console.log(data, "Aqui los datos");
-      setIsModalExp(false);
-    };
+  const [experiencia, setExperiencia] = useState(null);
+  const handleGuardarDatos = (data) => {
+    setExperiencia(data);
+    console.log(data, "Aqui los datos");
+    setIsModalExp(false);
+  };
 
-  // Institucion 
+  // Institucion
 
   const [isModalInstitucion, setIsModalInstitucion] = useState(false);
   const [institucion, setmodalInstitucion] = useState(null);
-    const handleInstitucion = (data) => {
-      setmodalInstitucion(data);
-      console.log(data, "datos institucion");
-      setIsModalInstitucion(false);
-  }
+  const handleInstitucion = (data) => {
+    setmodalInstitucion(data);
+    console.log(data, "datos institucion");
+    setIsModalInstitucion(false);
+  };
 
   // Cursos
   const [isModalCursos, setIsModalCursos] = useState(false);
   const [cursos, setmodalCursos] = useState(null);
-    const handleCursos = (data) => {
-      setmodalCursos(data);
-      console.log(data, "datos curso");
-      setIsModalCursos(false);
-}
+  const handleCursos = (data) => {
+    setmodalCursos(data);
+    console.log(data, "datos curso");
+    setIsModalCursos(false);
+  };
 
   const [isModalHabilidades, setIsModalHabilidades] = useState(false);
-  const [habilidades, setmodalHabilidades] = useState([])
-    const handleHabilidades = (data) => {
-      setmodalHabilidades(data);
-      console.log(data, "datos de habilidades");
-      setIsModalHabilidades(false);
-    }
-  
-  // Modal Idiomas 
+  const [habilidades, setmodalHabilidades] = useState([]);
+  const handleHabilidades = (data) => {
+    setmodalHabilidades(data);
+    console.log(data, "datos de habilidades");
+    setIsModalHabilidades(false);
+  };
+
+  // Modal Idiomas
   const [isModalIdiomas, setModalIdiomas] = useState(false);
   const [idiomas, setmodalIdiomas] = useState(null);
-    const handleIdiomas = (data) => {
-      setmodalIdiomas(data);
-      console.log(data, "datos idioma");
-      setModalIdiomas(false);
-    }
+  const handleIdiomas = (data) => {
+    setmodalIdiomas(data);
+    console.log(data, "datos idioma");
+    setModalIdiomas(false);
+  };
 
   const openModal = (modalType) => {
     if (modalType === "isModalInstitucion") {
@@ -252,7 +253,6 @@ export default function Formulario() {
   };
 
   const data = {
-    
     ...datosgenerales,
     ...datoscontacto,
     ...experiencia,
@@ -260,13 +260,26 @@ export default function Formulario() {
     cursos,
     habilidades,
     idiomas,
-  }
+  };
 
-  console.log(data)
+  console.log(data);
+
+  const openModalEvaluar = () => {
+    navigate(`/modal/validando/${id}`);
+  };
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
   return (
     <>
-      
       <Grid
         container
         direction="column"
@@ -327,17 +340,17 @@ export default function Formulario() {
                       name="tipoDocumento"
                       value={datosgenerales.tipoDocumento}
                       onChange={guardarDatos}
-                      >
-                        <MenuItem value="DNI">DNI</MenuItem>
-                        <MenuItem value="Carnet de Extranjeria">
-                          Carnet de Extranjeria
-                        </MenuItem>
-                      </Select>
+                    >
+                      <MenuItem value="DNI">DNI</MenuItem>
+                      <MenuItem value="Carnet de Extranjeria">
+                        Carnet de Extranjeria
+                      </MenuItem>
+                    </Select>
                     <CssTextField
                       fullWidth
                       variant="outlined"
                       label="N° documento"
-                      name="numeroDocumento" 
+                      name="numeroDocumento"
                       value={datosgenerales.numeroDocumento}
                       onChange={guardarDatos}
                     />
@@ -351,7 +364,11 @@ export default function Formulario() {
                       <CssButton2 variant="contained" type="button">
                         Cancelar
                       </CssButton2>
-                      <CssButton variant="contained" type="button" onClick={guardarDatos}>
+                      <CssButton
+                        variant="contained"
+                        type="button"
+                        onClick={guardarDatos}
+                      >
                         Guardar
                       </CssButton>
                     </div>
@@ -438,7 +455,11 @@ export default function Formulario() {
                       <CssButton2 variant="contained" type="button">
                         Cancelar
                       </CssButton2>
-                      <CssButton variant="contained" type="button" onClick={handleInputChange}>
+                      <CssButton
+                        variant="contained"
+                        type="button"
+                        onClick={handleInputChange}
+                      >
                         Guardar
                       </CssButton>
                     </div>
@@ -600,6 +621,20 @@ export default function Formulario() {
             </List>
           </Paper>
         </Grid>
+        <Button
+          variant="contained"
+          style={{
+            width: "200px",
+            textTransform: "none",
+            color: "white",
+            backgroundColor: isHovered ? "#ce0f6840" : "#CE0F69",
+          }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={openModalEvaluar}
+        >
+          Siguiente
+        </Button>
       </Grid>
     </>
   );

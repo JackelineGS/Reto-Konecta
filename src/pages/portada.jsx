@@ -4,7 +4,7 @@ import { Card, Container } from '@mui/material'
 // import Offers from './funciones/funciones'
 
 
-export function Portada() {
+export default function Portada() {
   return (
     <>
     <Card style={{

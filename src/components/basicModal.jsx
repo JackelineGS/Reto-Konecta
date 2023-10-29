@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const modalStyle = {
   position: "absolute",
@@ -27,10 +27,11 @@ export default function BasicModal() {
   // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const navigate = useNavigate();
+  const {id} = useParams()
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      navigate("/formulario/");
+      navigate(`/formulario/${id}`);
     }, 5000);
 
     return () => clearTimeout(timeout);
