@@ -3,8 +3,7 @@ import { UploadCv } from "./pages/uploadCv";
 import Formulario from "./pages/formulario";
 import { Navbar } from "./components/navbar";
 import { BackButton } from "./components/backButton";
-import Portada from "./pages/portada";
-console.log("Portada");
+import  Portada from "./pages/portada";
 
 /*import ModalCrearExp from "./components/modalCrearExp";
 import ModalCursos from './components/modalCursos';
@@ -30,7 +29,7 @@ function App() {
           <Route path='/formulario' element={<Formulario />}></Route>
         </Routes>
       </BrowserRouter>
-    </>
+      </>
   );
 }
 

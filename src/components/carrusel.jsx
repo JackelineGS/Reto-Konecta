@@ -1,37 +1,26 @@
 import React from "react";
-import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import carrusel1 from "../assets/img/carrusel1.png";
+/* import { color } from "@mui/system"; */
 
-
-export default function Carrusel(props) {
-  const items = [
+const Carrusel = () => {
+  const imagen = [
     {
-      description: "",
-      img: carrusel1
-    },
-    {
-      description: "",
       img: carrusel1
     },
   ];
 
   return (
-    <Carousel >
-      {items.map((item, i) => (
-        <Item key={i} item={item} />
-      ))}
-    </Carousel>
-  );
-}
-
-function Item(props) {
-  return (
-    <Paper>
-      <h2>{props.item.name}</h2>
-      <p>{props.item.description}</p>
-      {props.item.img && <img src={props.item.img} />}
-      
+    <Paper style={{display: "flex" , backgroundColor: '#002855'}}>
+      <div style={{ overflow: "hidden", margin: "0 auto"}}>
+        <img
+          src={carrusel1}
+          alt=""
+          style={{ width: "100%", height: "auto" }}
+        />
+      </div>
     </Paper>
   );
-}
+};
+
+export default Carrusel;
