@@ -75,9 +75,9 @@ export function ModalNoApto() {
             </Grid>
           ))}
         </SimpleContainer>
+        <Button onClick={modalEvaluacion}>Ver más Ofertas</Button>
       </SimpleContainer>
       <WhiteButton />
-      <Button onClick={modalEvaluacion}>Ver más Ofertas</Button>
     </>
   );
 }

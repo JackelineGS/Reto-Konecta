@@ -1,8 +1,9 @@
-import * as React from "react";
+import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import { useNavigate } from "react-router-dom";
 
 const modalStyle = {
   position: "absolute",
@@ -22,38 +23,47 @@ const backdropStyle = {
 };
 
 export default function BasicModal() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
+  const [open, setOpen] = useState(true);
+  // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      navigate("/formulario/");
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, [navigate]);
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      {/* <Button onClick={handleOpen}>Open modal</Button> */}
       <Modal
         open={open}
         onClose={handleClose}
-        aria-labelledby='modal-modal-title'
-        aria-describedby='modal-modal-description'
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
         BackdropProps={{ style: backdropStyle }}
       >
         <Box sx={modalStyle}>
           <Typography
-            id='modal-modal-title'
-            variant='h6'
-            component='h2'
-            textAlign='center'
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            textAlign="center"
           >
             {/*traerlo y hacerlo con javascript*/}
           </Typography>
           <Typography
-            id='modal-modal-description'
+            id="modal-modal-description"
             sx={{ mt: 2 }}
-            textAlign='center'
+            textAlign="center"
           >
             Redirigiendo
           </Typography>
         </Box>
       </Modal>
     </div>
-  )
+  );
 }

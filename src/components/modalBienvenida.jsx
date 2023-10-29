@@ -15,7 +15,7 @@ import { useParams } from "react-router-dom";
 import Artboard from "../assets/img/Artboard.png";
 
 // import ModalValidarDatos from "./modalValidarDatos";
-// import validar from "../assets/img/validar";
+import validar from "../assets/img/validar.png";
 
 const style = {
   position: "absolute",
@@ -113,12 +113,18 @@ export default function ModalBienvenida() {
           >
             <Container  style={{
                 alignItems: "center",
+<<<<<<< HEAD
               }}> 
             <img src={imagenes.bienvenida}
           />
               
               
             
+=======
+              }}
+            >
+              <img src={validar} alt='konecta-logo' className='logo logo-1' />
+>>>>>>> 0377bab5aa04be41717490d409214e8412cf67a2
             </Container>
             <Typography sx={styleLetra}>
               ¡Bienvenid@ a la evaluación!

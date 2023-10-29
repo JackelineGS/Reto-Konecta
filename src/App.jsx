@@ -3,7 +3,6 @@ import { UploadCv } from "./pages/uploadCv";
 import { FormularioCv } from "./pages/formularioCv";
 import { Navbar } from "./components/navbar";
 import { BackButton } from "./components/backButton";
-import { Portada } from "./pages/portada";
 import { PagesOffers } from "./pages/pagesOffers";
 import OffersId from "./funciones/offersId";
 import ModalBienvenida from "./components/modalBienvenida";
@@ -40,6 +39,7 @@ function App() {
           <Route path="/modal/bienvenida/validacion/:id" element={<ModalValidarDatos/>}></Route>
           <Route path="/modal/validado/:id" element={<ModalEstadoValidacion/>}></Route>
           <Route path="/modal/validando/:id" element={<ModalValidado/>}></Route>
+          <Route path="/modal/validando/" element={<ModalExisteValidacion/>}></Route>
           <Route path="/modal/redirigiendo/:id" element={<BasicModal/>}></Route>
           <Route path="/modal/validando/:id/apto" element={<ModalApto/>}></Route>
           <Route path="/modal/validando/:id/noapto" element={<ModalNoApto/>}></Route>

@@ -1,5 +1,5 @@
-import * as React from "react";
-import { useState } from "react";
+// eslint.config.js
+import React, { useState } from "react";
 import {
   Typography,
   Modal,
@@ -126,6 +126,7 @@ const CssButton2 = styled(Button)({
 });
 
 export default function ModalCursos(props) {
+  // const { open, onClose } = props; 
   const { open, onClose, onSave } = props;
   const [curso, setCurso] = useState("");
   const [nivel, setNivel] = useState("");
