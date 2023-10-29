@@ -11,7 +11,6 @@ const styles = {
   cardContainer: {
     display: "flex",
     flexDirection: "column",
-    padding: "6px",
     border: "1px solid #e0e0e0",
     width: "800px",
     height: "580px",

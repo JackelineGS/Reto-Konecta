@@ -220,7 +220,7 @@ export function UploadFile() {
         </div>
       ) : (
         <button className="btn btn-pink" onClick={openModal}>
-          Siguiente
+          Siguiente Aqui
         </button>
       )}
     </Container>

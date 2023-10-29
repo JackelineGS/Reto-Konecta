@@ -13,36 +13,19 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { styled } from "@mui/material/styles";
+import { CustomizedSteppers } from "../components/stepper";
 import ModalCrearExp from "../components/modalCrearExp";
 import ModalInstitucion from "./modalInstitucion";
 import ModalCursos from "../components/modalCursos";
 import ModalHabilidades from "./modalHabilidades";
 import ModalIdiomas from "./modalIdiomas";
-import AddIcon from "@mui/icons-material/Add";
-import EditIcon from "@mui/icons-material/Edit";
+import { MenuItem } from "@mui/material";
 
-const CustomPaper = styled(Paper)(({ theme }) => ({
-  width: "840px",
-  overflowY: "scroll",
-  height: "130vh",
-  display: "flex",
-  justifyContent: "center",
-  borderRadius: "10px",
-
-  "&::-webkit-scrollbar": {
-    width: "10px",
-    backgroundColor: "#white",
-    borderRadius: "10px",
-  },
-  "&::-webkit-scrollbar-thumb": {
-    backgroundColor: "#B2B4B2",
-    borderRadius: "10px",
-  },
-}));
 
 const CssTextField = styled(TextField)({
   display: "block",
   margin: ".5rem 0",
+  fontFamily: "Barlow",
   fontWeight: 300,
   fontSize: "16px",
 
@@ -67,23 +50,26 @@ const CssTextField = styled(TextField)({
 
 const styleAñadir = {
   color: "#CE0F69",
+  fontFamily: "Barlow",
   fontWeight: 600,
   fontSize: "13px",
-  textAling: "center",
+  alignItems: "center",
   margin: "1rem",
   padding: 0,
-  textTransform: "none",
 };
 
 const typoLetra = {
   color: "#6F7271",
+  fontFamily: "Barlow",
   fontWeight: 700,
   fontSize: "12px",
-  textAling: "center",
+  alignItems: "center",
+  margin: "1rem",
 };
 
 const typoEncabezado = {
   color: "#181818",
+  fontFamily: "Barlow",
   fontWeight: 700,
   fontSize: "18px",
   alignItems: "center",
@@ -107,8 +93,6 @@ const CssButton = styled(Button)({
   padding: "6px 16px",
   cursor: "pointer",
   margin: "5px",
-  textTransform: "none",
-  fontSize: "0.8rem",
   "&:hover": {
     backgroundColor: "#B2BAC2",
   },
@@ -119,22 +103,30 @@ const CssButton = styled(Button)({
 });
 
 const CssButton2 = styled(Button)({
-  backgroundColor: "#ECECEC",
+  backgroundColor: "#D9D8D8",
   color: "#545454",
   borderRadius: "8px",
   padding: "6px 16px",
   cursor: "pointer",
   margin: "5px",
-  textTransform: "none",
-  fontSize: "0.8rem",
   "&:hover": {
     backgroundColor: "#B2BAC2",
   },
   "&:disabled": {
-    backgroundColor: "#ECECEC",
+    backgroundColor: "#D9D8D8",
     cursor: "default",
   },
 });
+
+const styleAutocomplete = {
+  margin: "5px",
+  width: "624px",
+  height: "56px",
+  borderRadius: "8px",
+  display: "block",
+  marginBottom: "1.5rem",
+};
+
 
 export default function Formulario() {
 
@@ -268,15 +260,13 @@ export default function Formulario() {
     cursos,
     habilidades,
     idiomas,
-
   }
 
   console.log(data)
 
   return (
     <>
-      <BackButton />
-      <CustomizedSteppers />
+      
       <Grid
         container
         direction="column"
@@ -287,20 +277,16 @@ export default function Formulario() {
         }}
       >
         <Grid position="static" item xs={3}>
-          <CustomPaper
+          <Paper
             style={{
-              width: "840px",
               overflowY: "scroll",
-              height: "130vh",
-              display: "flex",
-              justifyContent: "center",
+              height: "80vh",
             }}
           >
             <List>
               <Card
                 sx={{ mt: 3 }}
                 style={{
-                  width: "600px",
                   backgroundColor: "#FFF",
                   padding: "1rem",
                   borderRadius: "24px",
@@ -315,9 +301,7 @@ export default function Formulario() {
                   }}
                 >
                   <Typography sx={typoEncabezado}>Datos personales</Typography>
-                  <Button sx={styleAñadir} startIcon={<EditIcon />}>
-                    Editar
-                  </Button>
+                  <Button sx={styleAñadir}>Editar</Button>
                 </div>
                 <CardContent>
                   <form>
@@ -373,28 +357,15 @@ export default function Formulario() {
                     </div>
                   </form>
                 </CardContent>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "end",
-                    gap: "10px",
-                  }}
-                >
-                  <CssButton2 variant='contained' type='button'>
-                    Cancelar
-                  </CssButton2>
-                  <CssButton variant='contained' type='button'>
-                    Guardar
-                  </CssButton>
-                </div>
               </Card>
               <Card
                 sx={{ mt: 3 }}
                 style={{
-                  width: "600px",
                   backgroundColor: "#FFF",
                   padding: "1rem",
-                  borderRadius: "10px",
+                  borderRadius: "24px",
+                  width: "664px",
+                  height: "530px",
                 }}
               >
                 <div
@@ -404,9 +375,7 @@ export default function Formulario() {
                   }}
                 >
                   <Typography sx={typoEncabezado}>Datos de contacto</Typography>
-                  <Button sx={styleAñadir} startIcon={<EditIcon />}>
-                    Editar
-                  </Button>
+                  <Button sx={styleAñadir}>Editar</Button>
                 </div>
                 <CardContent>
                   <form>
@@ -477,12 +446,13 @@ export default function Formulario() {
                 </CardContent>
               </Card>
               <Card
-                sx={{ mt: 3, mb: 3 }}
+                sx={{ mt: 3 }}
                 style={{
-                  width: "600px",
                   backgroundColor: "#FFF",
                   padding: "1rem",
-                  borderRadius: "10px",
+                  borderRadius: "24px",
+                  width: "664px",
+                  height: "334px",
                 }}
               >
                 <Typography sx={typoEncabezado}>Experiencia Laboral</Typography>
@@ -498,63 +468,35 @@ export default function Formulario() {
                             value="Con experiencia"
                           />
                         }
-                        label={
-                          <div>
-                            <Typography
-                              fontSize='15px'
-                              fontWeight='bold'
-                              color='#181818'
-                            >
-                              Con experiencia
-                            </Typography>
-                            <Typography fontSize='14px' color='#545454'>
-                              Experiencia en otro rubro, call, etc.
-                            </Typography>
-                          </div>
-                        }
+                        label="Con experiencia"
                       />
                     </AccordionSummary>
                   </Accordion>
                 </CardContent>
                 <CardContent>
                   <Accordion>
-                    <AccordionSummary>
-                      <FormControlLabel
-                        value='Sin experiencia'
-                        control={
-                          <Radio
-                            checked={!isModalExp}
-                            onChange={handleOptionChange}
-                            value='Sin experiencia'
-                          />
-                        }
-                        label={
-                          <div>
-                            <Typography
-                              fontSize='15px'
-                              fontWeight='bold'
-                              color='#181818'
-                            >
-                              Sin experiencia
-                            </Typography>
-                            <Typography fontSize='14px' color='#545454'>
-                              Egresados, estudiantes, etc.
-                            </Typography>
-                          </div>
-                        }
-                      />
-                    </AccordionSummary>
+                    <FormControlLabel
+                      value="Sin experiencia"
+                      control={
+                        <Radio
+                          checked={!isModalExp}
+                          onChange={handleOptionChange}
+                          value="Sin experiencia"
+                        />
+                      }
+                      label="Sin experiencia"
+                    />
                   </Accordion>
                 </CardContent>
               </Card>
-
               <Card
                 sx={{ mt: 3, mb: 3 }}
                 style={{
-                  width: "600px",
                   backgroundColor: "#FFF",
                   padding: "1rem",
-                  borderRadius: "10px",
+                  borderRadius: "24px",
+                  width: "664px",
+                  height: "356px",
                 }}
               >
                 <CardContent>
@@ -572,23 +514,13 @@ export default function Formulario() {
                           justifyContent: "space-between",
                         }}
                       >
-                        <div
-                          style={{
-                            width: "100%",
-                            marginTop: "15px",
-                          }}
-                        >
-                          <Typography sx={typoLetra}>INSTITUCIÓN</Typography>
-                        </div>
-
+                        <Typography sx={typoLetra}> INSTITUCIÓN</Typography>
                         <Button
                           sx={styleAñadir}
                           onClick={() => openModal("isModalInstitucion")}
-                          startIcon={<AddIcon />}
                         >
                           Añadir
                         </Button>
-
                         <ModalInstitucion
                           open={isModalInstitucion}
                           onClose={() => closeModal("isModalInstitucion")}
@@ -603,20 +535,12 @@ export default function Formulario() {
                           justifyContent: "space-between",
                         }}
                       >
-                        <div
-                          style={{
-                            width: "100%",
-                            marginTop: "15px",
-                          }}
-                        >
-                          <Typography sx={typoLetra}>
-                            CURSOS / ESPECIALIZACIONES
-                          </Typography>
-                        </div>
+                        <Typography sx={typoLetra}>
+                          CURSOS / ESPECIALIZACIONES
+                        </Typography>
                         <Button
                           sx={styleAñadir}
                           onClick={() => openModal("isModalCursos")}
-                          startIcon={<AddIcon />}
                         >
                           Añadir
                         </Button>
@@ -635,25 +559,16 @@ export default function Formulario() {
                           justifyContent: "space-between",
                         }}
                       >
-                        <div
-                          style={{
-                            width: "100%",
-                            marginTop: "15px",
-                          }}
-                        >
-                          <Typography sx={typoLetra}>HABILIDADES</Typography>{" "}
-                        </div>
+                        <Typography sx={typoLetra}>HABILIDADES</Typography>
                         <Button
                           sx={styleAñadir}
                           onClick={() => openModal("isModalHabilidades")}
-                          startIcon={<AddIcon />}
                         >
                           Añadir
                         </Button>
                         <ModalHabilidades
                           open={isModalHabilidades}
                           onClose={() => closeModal("isModalHabilidades")}
-                          startIcon={<AddIcon />}
                           onSave={handleHabilidades}
                         />
                       </div>
@@ -665,18 +580,10 @@ export default function Formulario() {
                           justifyContent: "space-between",
                         }}
                       >
-                        <div
-                          style={{
-                            width: "100%",
-                            marginTop: "15px",
-                          }}
-                        >
-                          <Typography sx={typoLetra}>IDIOMAS</Typography>
-                        </div>
+                        <Typography sx={typoLetra}>IDIOMAS</Typography>
                         <Button
                           sx={styleAñadir}
                           onClick={() => openModal("isModalIdiomas")}
-                          startIcon={<AddIcon />}
                         >
                           Añadir
                         </Button>
@@ -691,7 +598,7 @@ export default function Formulario() {
                 </CardContent>
               </Card>
             </List>
-          </CustomPaper>
+          </Paper>
         </Grid>
       </Grid>
     </>

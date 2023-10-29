@@ -10,6 +10,87 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { BackButton } from "../components/backButton";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { Container } from "postcss";
+
+const styles = {
+  cardContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: "6px",
+    margin:"20px",
+    border: "1px solid #e0e0e0",
+    width: "80%",
+    height: "100%",
+    borderRadius: "12px",
+    backgroundColor: "rgba(0, 150, 143, 0.1)",
+  },
+  icon: {
+    fontSize: "18px",
+    marginRight: "4px",
+    verticalAlign: "middle",
+    color: "#CE0F69",
+  },
+  link: {
+    textDecoration: "none",
+    color: "black",
+  },
+  textDias: {
+    color:'#CE0F69',
+    fontSize:'12px',
+    textAlign:'center',
+    margin:'10px',
+  },
+  time: {
+    fontSize: "12px",
+    backgroundColor: "white",
+    borderRadius: "20px",
+    textAlign: "center",
+    width: "100px",
+    padding: "5px",
+    margin: "10px",
+  }
+};
+
+const styles2 = {
+  cardContainer: {
+    display: "flex",
+    flexDirection: "column",
+    border: "1px solid #e0e0e0",
+    width: "60%",
+    height: "774px",
+    borderRadius: "20px",
+    padding: "30px",
+    margin: "20px",
+  },
+  textContainer: {
+    display: "flex",
+    flexDirection: "column",
+    marginBottom: "10px",
+  },
+  icon: {
+    fontSize: "18px",
+    marginRight: "4px",
+    verticalAlign: "middle",
+    color: "#CE0F69",
+  },
+  customCardContent: {
+    flex: 2,
+    overflowY: "auto",
+    paddingRight: "20px",
+    maxHeight: "50vh",
+    "&::-webkit-scrollbar": {
+      width: "10px",
+      backgroundColor: "white",
+      borderRadius: "10px",
+    },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundColor: "#B2B4B2",
+      borderRadius: "10px",
+    },
+  },
+};
 
 function OffersId() {
   const { id } = useParams();
@@ -48,25 +129,32 @@ function OffersId() {
     <Fragment>
       <BackButton/>
       {loading && <div>Cargando oferta...</div>}
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6} md={4}>
-          <Stack
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-            spacing={2}
-          >
-            {" "}
-            <div >
-              <Card variant="outlined">
+      <Card backgroundColor='red' height='100%' display='flex' flexDirection= "row">
+
+            <div style={{width:'50%', backgroundColor:'red'}}>
+              <Card variant="outlined" style={styles.cardContainer}>
                 <CardContent>
-                  <h2>Detalles de la oferta con ID: {offers.id}</h2>
-                  <Typography variant="h6">TITLE: {offers.title}</Typography>
+                  <Typography fontSize='20px' fontWeight='bold'> {offers.title}</Typography>
+                  <Typography fontSize='14px' marginTop='10px'>Atención al cliente</Typography>
+                  <div style={{ fontSize: "14px", marginTop:'10px' }}>
+                  <LocationOnIcon style={styles.icon} />
+                  Lima
+                </div>
                 </CardContent>
+                <div flexDirection= "column" alingItems = 'center' display='flex' >
+                <Typography style={styles.textDias}>
+                  Hace 4 días
+                </Typography>
+                <div style={styles.time}>
+                    Full time
+                </div>
+                </div>
               </Card>
             </div>
-            <div style={{width:"200px", height:"200px"}}> 
-              <Card variant="outlined">
+
+
+            <div  style={{width:'50%', backgroundColor:'blue'}}> 
+              <Card variant="outlined" style={styles2.cardContainer}>
                 <CardContent>
                   <h2>Detalles de la oferta con ID: {offers.id}</h2>
                   <Typography variant="h6">TITLE: {offers.title}</Typography>
@@ -74,9 +162,7 @@ function OffersId() {
                 </CardContent>
               </Card>
             </div>
-          </Stack>
-        </Grid>
-      </Grid>
+          </Card>
     </Fragment>
   );
 }
