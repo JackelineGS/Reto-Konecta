@@ -9,6 +9,7 @@ import OffersId from "./funciones/offersId";
 import ModalBienvenida from "./components/modalBienvenida";
 import ModalValidarDatos from "./components/modalValidarDatos";
 import ModalEstadoValidacion from "./components/modalEstadovalidacion";
+import Tabla from "./admin/Adcomponents/tabla";
 
 /*import ModalCrearExp from "./components/modalCrearExp";
 import ModalCursos from './components/modalCursos';
@@ -26,8 +27,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
-        <BackButton />
+        {/* <Navbar />
+        <BackButton /> */}
         <Routes>
           <Route path='/' element={<Portada />}></Route>
           <Route path='/ofertas' element={<PagesOffers />}></Route>
@@ -43,6 +44,7 @@ function App() {
           ></Route>
           <Route path='/cargarCv' element={<UploadCv />}></Route>
           <Route path='/formulario' element={<FormularioCv />}></Route>
+          <Route path='/Admin' element={<Tabla />}></Route>
         </Routes>
       </BrowserRouter>
     </>

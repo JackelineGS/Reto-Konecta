@@ -32,7 +32,7 @@ export function InitialsIcon({ initials, color }) {
 }
 export function SideBar({ userName, userRole }) {
   const [auth, setAuth] = React.useState(true);
-  const userInitials = "JD"; // Cambia esto por las iniciales del usuario logeado
+  const userInitials = "JD"; // Cambiar esto por las iniciales del usuario logeado
   const handleChange = (event) => {
     setAuth(event.target.checked);
   };
@@ -40,13 +40,12 @@ export function SideBar({ userName, userRole }) {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
-        position='static'
+        position='fixed'
         sx={{
           height: "60px",
           backgroundColor: "white",
           padding: 0,
-          width: '80%',
-          marginLeft: '16%'
+          width: "100%",
         }}
       >
         <Toolbar
@@ -55,7 +54,7 @@ export function SideBar({ userName, userRole }) {
             justifyContent: "flex-end",
             margin: 0,
             padding: 0,
-            marginTop: 0
+            marginTop: 0,
           }}
         >
           {auth && (
