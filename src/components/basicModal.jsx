@@ -21,7 +21,7 @@ const backdropStyle = {
   backgroundColor: "#002782",
 };
 
-export function BasicModal() {
+export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -55,5 +55,5 @@ export function BasicModal() {
         </Box>
       </Modal>
     </div>
-  );
+  )
 }

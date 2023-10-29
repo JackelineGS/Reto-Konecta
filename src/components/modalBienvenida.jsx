@@ -12,6 +12,8 @@ import {
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Artboard from "../assets/img/Artboard.png";
+
 // import ModalValidarDatos from "./modalValidarDatos";
 // import validar from "../assets/img/validar";
 
@@ -73,6 +75,11 @@ const CssButton = styled(Button)({
   },
 });
 
+const imagenes = {
+  bienvenida: Artboard,
+  title: 'bienvenida validacion'
+}
+
 export default function ModalBienvenida() {
   const [open, setOpen] = useState(true);
   const { id } = useParams();
@@ -104,12 +111,14 @@ export default function ModalBienvenida() {
             alignItems="center"
             alignContent="center"
           >
-            <Container
-              style={{
+            <Container  style={{
                 alignItems: "center",
-              }}
-            >
-              {/* <img src={validar} alt='konecta-logo' className='logo logo-1' /> */}
+              }}> 
+            <img src={imagenes.bienvenida}
+          />
+              
+              
+            
             </Container>
             <Typography sx={styleLetra}>
               ¡Bienvenid@ a la evaluación!
