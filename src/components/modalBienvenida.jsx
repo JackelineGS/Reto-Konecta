@@ -113,18 +113,12 @@ export default function ModalBienvenida() {
           >
             <Container  style={{
                 alignItems: "center",
-<<<<<<< HEAD
               }}> 
             <img src={imagenes.bienvenida}
           />
               
               
             
-=======
-              }}
-            >
-              <img src={validar} alt='konecta-logo' className='logo logo-1' />
->>>>>>> 0377bab5aa04be41717490d409214e8412cf67a2
             </Container>
             <Typography sx={styleLetra}>
               ¡Bienvenid@ a la evaluación!
