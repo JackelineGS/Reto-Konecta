@@ -13,7 +13,7 @@ import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 // import ModalValidarDatos from "./modalValidarDatos";
-// import validar from "../assets/img/validar";
+import validar from "../assets/img/validar.png";
 
 const style = {
   position: "absolute",
@@ -109,7 +109,7 @@ export default function ModalBienvenida() {
                 alignItems: "center",
               }}
             >
-              {/* <img src={validar} alt='konecta-logo' className='logo logo-1' /> */}
+              <img src={validar} alt='konecta-logo' className='logo logo-1' />
             </Container>
             <Typography sx={styleLetra}>
               ¡Bienvenid@ a la evaluación!

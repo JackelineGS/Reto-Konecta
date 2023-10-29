@@ -1,19 +1,12 @@
-<<<<<<< HEAD
 // eslint.config.js
-=======
-import * as React from "react";
-import { useState } from "react";
->>>>>>> 64ca0d0c4dab7bba9c34ebbacbf9607a494bea3e
+import React, { useState } from "react";
 import {
   Typography,
   Modal,
   Box,
-<<<<<<< HEAD
-=======
   Button,
   MenuItem,
   Select,
->>>>>>> 64ca0d0c4dab7bba9c34ebbacbf9607a494bea3e
   Grid,
   TextField,
 } from "@mui/material";
@@ -133,9 +126,7 @@ const CssButton2 = styled(Button)({
 });
 
 export default function ModalCursos(props) {
-<<<<<<< HEAD
-  const { open, onClose } = props; 
-=======
+  // const { open, onClose } = props; 
   const { open, onClose, onSave } = props;
   const [curso, setCurso] = useState("");
   const [nivel, setNivel] = useState("");
@@ -150,7 +141,6 @@ export default function ModalCursos(props) {
     onClose();
   };
 
->>>>>>> 64ca0d0c4dab7bba9c34ebbacbf9607a494bea3e
 
   return (
     <div>

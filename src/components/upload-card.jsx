@@ -43,7 +43,7 @@ export function UploadFile() {
 
   async function query(data) {
     try {
-      console.log(data);
+      // console.log(data,'aqui llego');
       const response = await fetch(
         "https://konecta-1.onrender.com/api/v1/prediction/c7913cb8-def5-4393-a7b9-3717e2646d95",
         {
@@ -127,7 +127,7 @@ export function UploadFile() {
               });
             });
           }
-          // console.log(fullText);
+          console.log(fullText);
           // setCvText(fullText)
         });
       };
@@ -157,11 +157,11 @@ export function UploadFile() {
   };
 
 
-  const App = () => {
-    return (
-        <BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />
-    );
-};
+//   const App = () => {
+//     return (
+//         <BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />
+//     );
+// };
 
   return (
     <Container>

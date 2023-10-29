@@ -11,6 +11,10 @@ import ModalValidarDatos from "./components/modalValidarDatos";
 import ModalEstadoValidacion from "./components/modalEstadovalidacion";
 import ModalValidado from "./components/modalValidado"
 import { ModalApto } from "./components/modalApto";
+import BasicModal from "./components/basicModal";
+import { ModalNoApto } from "./components/modalNoApto";
+import { ModalEvaluaciones } from "./components/modalEvaluaciones"
+import Formulario from "./components/formulario";
 
 
 
@@ -24,6 +28,7 @@ import { Navbar } from "./components/navbar";
 import ModalInstitucion from './components/modalInstitucion';*/
 
 import "./App.css";
+import ModalExisteValidacion from "./components/modalExisteValidacion";
 //import { SideBar } from "./components/sideBar";
 
 function App() {
@@ -33,12 +38,13 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path='/' element={<Portada />}></Route>
-          <Route path='/ofertas' element={<Ofertas />}></Route>
+          {/* <Route path='/ofertas' element={<Ofertas />}></Route> */}
           <Route path='/ofertas/:id' element={<OffersId />}></Route>
           <Route path="/modal/bienvenida/:id" element={<ModalBienvenida/>}></Route>
           <Route path="/modal/bienvenida/validacion/:id" element={<ModalValidarDatos/>}></Route>
           <Route path="/modal/validado/:id" element={<ModalEstadoValidacion/>}></Route>
           <Route path="/modal/validando/:id" element={<ModalValidado/>}></Route>
+          <Route path="/modal/validando/" element={<ModalExisteValidacion/>}></Route>
           <Route path="/modal/redirigiendo/:id" element={<BasicModal/>}></Route>
           <Route path="/modal/validando/:id/apto" element={<ModalApto/>}></Route>
           <Route path="/modal/validando/:id/noapto" element={<ModalNoApto/>}></Route>
@@ -57,8 +63,8 @@ function App() {
           <Route path='/cargarCv' element={<UploadCv />}></Route>
           <Route path='/formulario' element={<FormularioCv />}></Route>
           <Route path='/ofertas' element={<PagesOffers />}></Route>
-          <Route path='/listaPostulantes' element={<ListaPostulantes />}></Route>
-          <Route path='/tabla' element={<Tabla />}></Route>
+          {/* <Route path='/listaPostulantes' element={<ListaPostulantes />}></Route>
+          <Route path='/tabla' element={<Tabla />}></Route> */}
         </Routes>
       </BrowserRouter>
     </>

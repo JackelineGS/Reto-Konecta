@@ -47,7 +47,6 @@ export default function ModalValidado() {
   // FLOWISE evaluacion de cv con ofertas
 
   async function queryEvaluacion(data) {
-    console.log(data,'aqui everto')
     const response = await fetch(
       "https://konecta-1.onrender.com/api/v1/prediction/1125bc0a-918b-49cc-92b6-ce233deb96a3",
         {
@@ -73,6 +72,8 @@ const comparacion = async(offer, cv) => {
     }  
     if (response.includes("apto")) {
       navigate(`/modal/validando/${id}/apto/`)  
+    }else if (response.includes("no apto"))  {
+      navigate(`/modal/validando/:id/noapto/`)
     }
   } catch (error) {
     // Maneja cualquier error que pueda ocurrir en la función 'query' o en el bloque try
