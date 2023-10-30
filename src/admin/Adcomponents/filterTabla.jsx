@@ -1,15 +1,12 @@
 import { useState } from "react";
-import {
-  Box,
-  TextField,
-  Button,
-} from "@mui/material";
-
+import { Box, TextField, Button, InputAdornment, } from "@mui/material";
+import { Search } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 
 const Header = () => {
   const [fechaInicio, setFechaInicio] = useState(null);
   const [fechaFin, setFechaFin] = useState(null);
+  const [busqueda, setBusqueda] = useState("");
 
   const handleFechaInicioChange = (event) => {
     setFechaInicio(event.target.value);
@@ -26,16 +23,38 @@ const Header = () => {
   }
 };
 
-  const boxStyle = {
-    margin: '1rem',
-    direction: 'row',
-    display: 'flex',
-  }
+const handleBusquedaChange = (event) => {
+  setBusqueda(event.target.value);
+};
 
-  const boxinput = {
-    margin: '1rem',
-    direction: 'row',
-  }
+
+const boxStyle = {
+  margin: "30px",
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "center",
+  gap: "20px",
+};
+
+const inputStyle = {
+  width: "180px",
+  padding: 0,
+  minHeight: "30px",
+  "& input": {
+    cursor: "pointer",
+  },
+  "& label.Mui-focused": {
+    color: "#919EAB",
+  },
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "#919EAB",
+    },
+    "& input:focus fieldset": {
+      borderColor: "none",
+    },
+  },
+};
 
   const CssButton = styled(Button)({
     backgroundColor: "#002855",
@@ -61,28 +80,55 @@ const Header = () => {
 
   return (
     <Box sx={boxStyle}>
-      <Box sx={ boxStyle }>
-        <TextField sx={boxinput}
-          //label="Fecha inicio"
-          type="date"
-          value={fechaInicio}
-          onChange={handleFechaInicioChange}
+      
+        <TextField  sx={inputStyle}
+        type='date'
+        variant='outlined'
+        label='F.Inicio'
+        value={fechaInicio}
+        onChange={handleFechaInicioChange}
+        InputLabelProps={{
+          shrink: true,
+        }}
         />
-        <TextField sx={boxinput}
-          //label="Fecha fin"
-          type="date"
-          value={fechaFin}
-          onChange={handleFechaFinChange}
+        <TextField sx={inputStyle}
+        type='date'
+        variant='outlined'
+        label='F.Fin'
+        value={fechaFin}
+        onChange={handleFechaFinChange}
+        InputLabelProps={{
+          shrink: true,
+        }}
         />
-      </Box>
+
       <CssButton 
-        type="submit"
-        variant="contained"
-        color="primary"
+        type='submit'
+        variant='contained'
+        color='primary'
         onClick={handleBuscar}
+        startIcon={<Search />}
       >
         Buscar
       </CssButton>
+      <TextField
+        sx={{
+          width: "400px",
+          padding: 0,
+        }}
+        type='text'
+        variant='outlined'
+        placeholder='Buscar por documentos'
+        value={busqueda}
+        onChange={handleBusquedaChange}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position='start'>
+              <Search />
+            </InputAdornment>
+          ),
+        }}
+      />
     </Box>
   );
 };

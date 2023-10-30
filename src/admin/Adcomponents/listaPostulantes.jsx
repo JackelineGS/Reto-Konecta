@@ -9,8 +9,8 @@ import {
   Paper,
   Select,
   MenuItem,
-
 } from '@mui/material';
+import Header from "./filterTabla";
 
 export default function ListaPostulantes() {
 
@@ -159,23 +159,51 @@ const requestData = {
  }
   return (
 
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper}
+    sx={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      borderRadius: "15px",
+      width: "950px",
+      marginLeft: "40px",
+      marginTop: "30px",
+    }}
+    >
+      <Header />
     { tableData.length > 0 ? 
       <Table style={{
         width: '90%',
         margin: '2rem'
-      }
-      }>
+      }}>
+         {" "}
+
       <TableHead>
         <TableRow style={{backgroundColor:'#B2B4B2'}}>
-          <TableCell>Nro.Documento</TableCell>
-          <TableCell>Nombre</TableCell>
-          <TableCell>Postulación</TableCell>
-          <TableCell>IGC de postulación</TableCell>
-          <TableCell>Titulo de Oferta</TableCell>
-          <TableCell>Perfil de oferta</TableCell>
-          <TableCell>Resultado</TableCell>
-          <TableCell>Estado</TableCell>
+          <TableCell style={{ fontWeight: "bold" }}>
+            Nro.Documento
+          </TableCell>
+          <TableCell  style={{ fontWeight: "bold" }}>
+            Nombre
+          </TableCell>
+          <TableCell style={{ fontWeight: "bold" }}>
+            Postulación
+          </TableCell>
+          <TableCell style={{ fontWeight: "bold" }}>
+            IGC de postulación
+          </TableCell>
+          <TableCell style={{ fontWeight: "bold" }}>
+            Titulo de Oferta
+            </TableCell>
+          <TableCell style={{ fontWeight: "bold" }}>
+            Perfil de oferta
+          </TableCell>
+          <TableCell style={{ fontWeight: "bold" }}>
+            Resultado
+          </TableCell>
+          <TableCell style={{ fontWeight: "bold" }}>
+            Estado
+          </TableCell>
           
         </TableRow>
       </TableHead>

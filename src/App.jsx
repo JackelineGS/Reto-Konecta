@@ -37,7 +37,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar/>
         <Routes>
           <Route path='/' element={<Portada />}></Route>
           {/* <Route path='/ofertas' element={<Ofertas />}></Route> */}

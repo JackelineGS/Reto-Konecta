@@ -1,7 +1,8 @@
 import { Unete } from "../components/unete";
 import Offers from "../components/offers";
-import { Card, Container } from '@mui/material'
+import { Card } from '@mui/material'
 import { BubbleChat } from 'flowise-embed-react'
+import { Navbar } from '../components/navbar'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ App()
 export default function Portada() {
   return (
     <>
+    <Navbar/>
     <Card style={{
       height: '85%',
       width: '100%',

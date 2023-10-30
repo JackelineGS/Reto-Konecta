@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { SimpleContainer } from "../components/simpleContainer";
 import { CustomizedSteppers } from "../components/stepper";
 import { Box, Button, Card, CardContent, Typography, ListItem, Container} from "@mui/material";
+import { Navbar } from "../components/navbar"
 ("Mostrar en la otra vista");
 // import { SuccessAlert } from "../components/successAlert"; 'Modales a mostrar con javascript'
 //import { WarningAlert } from "../components/warningAlert"; idem
@@ -96,6 +97,7 @@ const styles ={
 
   return (
     <>
+     <Navbar/>
       <CustomizedSteppers />
       <Container  sx={styles.cont}
       >

@@ -4,27 +4,27 @@ import { SideBar } from './navbar';
 import { Typography } from '@mui/material';
 
 function Tabla() {
-  const letra = {
-    color: "#002855",
-    margin: "24px",
-    fontFamily: "Barlow",
-    fontWeight: "600",
-    fontSize: "20px",
-    borde: "none",
-    justifyContent: "left",
-    alignItems: "left",
+  const containerStyle = {
     display: "flex",
-  
-  }
+    marginTop: "30px",
+  };
+
+  const contentStyle = {
+    flex: 1,
+    padding: "30px",
+  };
+
   return (
-    <div className="App">
+    <div style={containerStyle}>
         <SideBar/>
-        <div style={{
-          marginLeft: '16%'
-        }}>
+        <div style={contentStyle}>
           
-        <Typography sx={letra}>Lista de postulantes</Typography>  
-        <Header />
+        <Typography  sx={{
+            fontSize: "20px",
+            fontWeight: "bold",
+            color: "#002855",
+            marginTop: "30px",
+          }} > Lista de postulantes</Typography>  
         <DataTable />
         </div>
        

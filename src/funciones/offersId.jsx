@@ -13,6 +13,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import ShareIcon from "@mui/icons-material/Share";
 import { AccessTime, Room, Accessible } from "@mui/icons-material";
 import { styled } from '@mui/material/styles';
+import { Navbar } from '../components/navbar'
 
 const styles = {
   cardContainer: {
@@ -156,6 +157,7 @@ function OffersId() {
 
   return (
     <Fragment>
+       <Navbar/>
       <BackButton />
       {loading && <div>Cargando oferta...</div>}
       <CardContent backgroundColor="red" height="100%">

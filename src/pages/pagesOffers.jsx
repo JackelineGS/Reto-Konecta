@@ -6,8 +6,8 @@ import { Box } from "@mui/system";
 
 export function PagesOffers() {
   return (
-    <Box
-      sx={{
+
+    <Box sx={{
         display: "flex",
         flexDirection: "row",
         marginLeft: "30px",
