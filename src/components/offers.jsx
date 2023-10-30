@@ -5,18 +5,32 @@ import { useNavigate } from "react-router-dom";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AccessibleIcon from '@mui/icons-material/Accessible';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Accordion from '@mui/material/Accordion';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const styles = {
   cardContainer: {
+    width: "70%",
+    flexDirection: "column",
+    alingItems: "center",
+    alignContent: "center",
     display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    padding: "6px",
-    border: "1px solid #e0e0e0",
-    width: "350px",
-    height: "Hug 350px",
-    borderRadius: "12px",
+    backgroundColor: 'transparent',
+    borderRadius: '12px'
+
+  },
+  cardAcordion: {
+    display: "flex",
+    flexDirection: "column",
     backgroundColor: "white",
+    margin: '0.3rem'
+  },
+  cardDetails :{
+    display: "flex",
+    flexDirection: "column",
+    alingItems: "center",
   },
   bigCard: {
     display: "flex",
@@ -63,6 +77,7 @@ const styles = {
   firstGrid: {
     alingItems: 'center',
     display: 'flex',
+   
   },
   secondGrid: {
     width: '100%',
@@ -78,12 +93,10 @@ const styles = {
       height: "40px",
       borderRadius: "8px",
       padding: "11px",
-      width:'264px',
+      width:'70%',
       margin: '1.5rem'
   }
 };
-
-
 
 
 function Offers() {
@@ -110,9 +123,6 @@ function Offers() {
     fetchOffers(url);
   }, []);
 
-  // if (loading) {
-  //   return <div>Cargando ofertas...</div>;
-  // }
 
   return (
     <Card style={styles.bigCard}>
@@ -129,7 +139,13 @@ function Offers() {
       {offers.map((offer, index) => (
         <Grid item xs={12} sm={6} md={4} key={index} style={styles.secondGrid}  
         >
-          <Card variant="outlined" style={styles.cardContainer}>
+          <Accordion style={styles.cardContainer}>
+          <AccordionSummary style={styles.cardAcordion}
+             expandIcon={<ExpandMoreIcon />}
+             aria-controls="panel1a-content"
+             id="panel1a-header"
+          >
+          
             <CardContent>
               <Typography variant="h6" style={styles.cardTitle}>{offer.title}</Typography>
               <Typography color='#CE0F69' fontSize='12px' textAlign='left'>
@@ -148,19 +164,18 @@ function Offers() {
               
               <div style={{ fontSize: "14px", margin: "10px" }}>
               < AccessibleIcon style={styles.icon} />
-            
               </div>
-
               </div >
-              <Typography sx={{ fontSize: "16px", color: "#181818", marginBottom: "20px" }}
-                >{offer.content}</Typography>
-              {/*<Typography variant="h6" >CATEGORY: {offer.category}</Typography>
-              <Typography variant="h6" >ID: {offer.id}</Typography>}
-              {/* <Link to={`/ofertas/${offer.id}`}> */}
+              </CardContent>
+              </AccordionSummary>
+
+              <AccordionDetails style={styles.cardDetails}>
+              <Typography sx={{ fontSize: "14px", color: "#181818", marginBottom: "20px" }}
+                >{offer.content}
+              </Typography>
                 <Button onClick={() => navigate(`/ofertas/${offer.id}`)}  variant="contained" style={styles.buttonConoce} >Conoce más</Button>
-              {/* </Link> */}
-            </CardContent>
-          </Card>
+              </AccordionDetails>
+              </Accordion>
         </Grid>
       ))}
     </Grid>

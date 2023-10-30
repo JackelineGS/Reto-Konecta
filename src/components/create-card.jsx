@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
+import { Container } from "@mui/material";
 
 export function CreateCvCard() {
   const cardStyles = {
@@ -10,8 +11,10 @@ export function CreateCvCard() {
     justifyContent: "center",
     backgroundColor: "rgba(1, 153, 145, 0.041)",
     padding: "20px",
-    width: "230px",
-    height: "260px",
+    borderRadius: "8px",
+    width: "80%",
+    margin: "1rem",
+    height: "306px",
   };
 
   const linkStyles = {
@@ -24,6 +27,9 @@ export function CreateCvCard() {
   };
 
   return (
+    <Container style={{
+      margin: '0'
+    }}>
     <Card style={cardStyles}>
       <Link to='/formulario' style={linkStyles}>
         <label style={labelStyles}>
@@ -36,5 +42,6 @@ export function CreateCvCard() {
         </label>
       </Link>
     </Card>
+    </Container>
   );
 }

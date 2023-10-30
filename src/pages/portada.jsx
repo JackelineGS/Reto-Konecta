@@ -1,8 +1,14 @@
 import { Unete } from "../components/unete";
 import Offers from "../components/offers";
 import { Card, Container } from '@mui/material'
-// import Offers from './funciones/funciones'
+import { BubbleChat } from 'flowise-embed-react'
 
+const App = () => {
+  return (
+        <BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />
+    );
+};
+App()
 
 export function Portada() {
   return (
@@ -35,6 +41,7 @@ export function Portada() {
     <Offers />
       </Card>  
       </Card>
+      <BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />
     </>
   );
 }

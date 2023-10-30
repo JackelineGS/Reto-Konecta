@@ -43,6 +43,18 @@ const styleLetra = {
   display: "flex",
 };
 
+const stylelabel = {
+  color: "#181818",
+  marginLeft: "1rem",
+  fontFamily: "Barlow",
+  fontWeight: "400",
+  fontSize: "16px",
+  borde: "none",
+  justifyContent: "left",
+  alignItems: "left",
+  display: "flex",
+};
+
 const CssTextField = styled(TextField)({
   margin: "5px",
   width: "624px",
@@ -78,6 +90,8 @@ const CssButton = styled(Button)({
   padding: "6px 16px",
   cursor: "pointer",
   margin: "5px",
+  width: "194px",
+  height: "48px",
 
   "&:hover": {
     backgroundColor: "#B2BAC2",
@@ -162,11 +176,16 @@ export default function ModalValidarDatos() {
             justifyContent="center"
             alignItems="center"
             alignContent="center"
+            display="flex"
           >
             <Typography sx={styleLetra}>
               Iniciamos validando tus datos personales
             </Typography>
-            <form>
+            <form style={{
+            
+               alignItems: "center",
+               
+            }}>
               <CssTextField
                 fullWidth
                 variant="outlined"
@@ -181,7 +200,7 @@ export default function ModalValidarDatos() {
                 name="apellidos"
                 onChange={handleFieldChange}
               />
-              <InputLabel id="demo-simple-select-label" >
+              <InputLabel id="demo-simple-select-label" sx={stylelabel}>
                 Tipo de documento
               </InputLabel>
               <Select
@@ -210,13 +229,13 @@ export default function ModalValidarDatos() {
                 }}
                 onChange={handleFieldChange}
               />
-              <CssButton
+            </form>
+            <CssButton
                disabled={!isFormComplete}
               onClick={openModalValidado}
               >
                 Siguiente
               </CssButton>
-            </form>
           </Grid>
         </Box>
       </Modal>

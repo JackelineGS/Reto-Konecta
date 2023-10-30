@@ -15,7 +15,6 @@ import { useParams } from "react-router-dom";
 import Artboard from "../assets/img/Artboard.png";
 
 // import ModalValidarDatos from "./modalValidarDatos";
-import validar from "../assets/img/validar.png";
 
 const style = {
   position: "absolute",
@@ -46,7 +45,20 @@ const styleLetra = {
 
 const styleSubtitle = {
   color: "#181818",
-  width: "649px",
+  width: "538px",
+  height: "66px",
+  fontFamily: "Barlow",
+  fontWeight: "400",
+  fontSize: "14px",
+  alignItems: "center",
+  margin: "1rem",
+  textAling: "center",
+  justifyContent: "center",
+  display: "flex",
+};
+
+const styleSubtitlecheck = {
+  color: "#181818",
   fontFamily: "Barlow",
   fontWeight: "400",
   fontSize: "14px",
@@ -64,6 +76,8 @@ const CssButton = styled(Button)({
   padding: "6px 16px",
   cursor: "pointer",
   margin: "5px",
+  width: "194px",
+  height: "48px",
 
   "&:hover": {
     backgroundColor: "#B2BAC2",
@@ -113,12 +127,11 @@ export default function ModalBienvenida() {
           >
             <Container  style={{
                 alignItems: "center",
+                justifyContent: 'center',
+                width: '50%'
               }}> 
             <img src={imagenes.bienvenida}
           />
-              
-              
-            
             </Container>
             <Typography sx={styleLetra}>
               ¡Bienvenid@ a la evaluación!
@@ -131,13 +144,16 @@ export default function ModalBienvenida() {
             <Card
               style={{
                 display: "flex",
+                width: "440px",
+                height: "32px",
+                margin: "10px"
               }}
             >
               <Checkbox
                 checked={isChecked}
                 onChange={handleCheckboxChange}
               ></Checkbox>
-              <Typography sx={styleSubtitle}>
+              <Typography sx={styleSubtitlecheck}>
                 He leído y acepto la Política de Privacidad de los postulantes
               </Typography>
             </Card>

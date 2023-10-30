@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import illustration_upload from "../assets/img/illustration_upload.png";
-import { BubbleChat } from "flowise-embed-react";
 import * as pdfjsLib from "pdfjs-dist/build/pdf";
 import { SuccessAlert } from "./successAlert";
-import { CircularProgress, Container } from "@mui/material";
+import { CircularProgress, Container, Button } from "@mui/material";
 import { WarningAlert } from "./warningAlert";
 import { ErrorAlert } from "./errorAlert";
-import { PinkButton } from "./pink-button";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { styled } from "@mui/material/styles";
+import { CreateCvCard } from "../components/create-card";
 
 export function UploadFile() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -139,13 +139,34 @@ export function UploadFile() {
   const cardStyles = {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
     justifyContent: "center",
     backgroundColor: "rgba(1, 153, 145, 0.041)",
     padding: "20px",
-    width: "230px",
-    height: "260px",
+    borderRadius: "8px",
+    width: "80%",
+    margin: "1rem",
+    height: "306px",
   };
+
+  const CssButton = styled(Button)({
+    backgroundColor: "#CE0F69",
+    color: "white",
+    borderRadius: "8px",
+    padding: "6px 16px",
+    cursor: "pointer",
+    width: "344px",
+    height: "48px",
+    marginTop: '4rem',
+  
+    "&:hover": {
+      backgroundColor: "#B2BAC2",
+    },
+  
+    "&:disabled": {
+      backgroundColor: "#D9D8D8",
+      cursor: "default",
+    },
+  });
 
   const imageStyles = {
     width: "100%",
@@ -157,14 +178,18 @@ export function UploadFile() {
   };
 
 
-//   const App = () => {
-//     return (
-//         <BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />
-//     );
-// };
-
   return (
-    <Container>
+    <Container style={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: 'center',
+      alignItems: 'center'
+
+    }}>
+      <div style={{
+        display: "flex",
+        flexDirection: "row",
+      }}>
       <Card style={cardStyles}>
         {filePreview ? (
           <img
@@ -200,14 +225,10 @@ export function UploadFile() {
           onChange={handleFileUpload}
           style={{ display: "none" }}
         />
-
-        {/* {pdfText && (
-        <div>
-          <Typography variant='h6'>Texto del PDF:</Typography>
-          <pre>{pdfText}</pre>
-        </div>
-      )} */}
       </Card>
+      <CreateCvCard/>
+      </div>
+
       {showSuccessAlert && (
         <SuccessAlert message="La información está completa" />
       )}
@@ -217,15 +238,15 @@ export function UploadFile() {
       {showErrorAlert && (
         <ErrorAlert message="Hubo un error al procesar la información" />
       )}
-      {/* <PinkButton onClick={openModal} /> */}
+      
       {upload ? (
         <div style={{ textAlign: "center", padding: "3%" }}>
           <CircularProgress color="secondary" />
         </div>
       ) : (
-        <button onClick={showSuccessAlert ? openModal : openRedirigiendo}>
+        <CssButton onClick={showSuccessAlert ? openModal : openRedirigiendo}>
           Siguiente
-        </button>
+        </CssButton>
       )}
     </Container>
   );

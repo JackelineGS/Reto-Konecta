@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Typography, Modal, Box, Button, Grid, Container } from '@mui/material'
-import estado from "../assets/img/Artboard2.png";
 import { styled } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import estado from "../assets/img/Artboard2.png";
 
 
 const style = {
@@ -39,6 +40,7 @@ const style = {
         fontWeight: "400",
         fontSize: "14px",
         alignItems:"center",
+        lineHeight: "22px",
         margin: '1rem',
         textAling: "center", 
         justifyContent: 'center',
@@ -63,17 +65,22 @@ const style = {
     },
   });
 
-export default function ModalExisteValidacion() {
+export default function ModalEstadotercero() {
 
-  const navigate = useNavigate()
-
-  const modalInicio = () => {
-    navigate('/')
-  }
     
     const [open, setOpen] = useState(true);
     // const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const navigate = useNavigate()
+
+    const { id } = useParams();
+    console.log(id)
+
+    const UploadCv = () => {
+      navigate(`/cargarCv/${id}`)
+    }
+
+
   return (
     <div>
     {/* <Button onClick={handleOpen}>Open modal</Button> */}
@@ -90,18 +97,24 @@ export default function ModalExisteValidacion() {
          alignContent= 'center'
         >
             <Container
-                    style={{
-                        alignItems:'cente'
-                    }}
+            style={{
+              alignItems: "center",
+              justifyContent: 'center',
+              width: '50%'
+            }}
                 >
-                <img src={estado} alt='konecta-logo' className='logo logo-2' width='300px' height='215px' />
+                <img src={estado} />
                 </Container>
-                <Typography sx={styleLetra}>Te encuentras en Evaluacion</Typography>
-                <Typography sx={styleSubtitle}>Hola Postulante, actualmente te encuentras en un proceso de evaluación para Asesor de ATC Rímac Seguros, estas a tiempo de resolver las  pruebas y continuar tu proceso.</Typography>
-                <CssButton onClick={modalInicio} >Entendido</CssButton>
+                <Typography sx={styleLetra}>TE ENCUENTRAS EN EVALUACIÓN</Typography>
+                <Typography sx={styleSubtitle}>Hola Carlos, actualmente te encuentras
+                 en un proceso de evaluación para Asesor de ATC Rímac Seguros, estas a
+                  tiempo de resolver las  pruebas y continuar tu proceso.</Typography>
+                <CssButton onClick={UploadCv} >Continuar</CssButton>
         </Grid>
       </Box>
     </Modal>
+
   </div>
+  
   )
 }

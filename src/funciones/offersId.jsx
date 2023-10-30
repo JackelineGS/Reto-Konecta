@@ -12,6 +12,7 @@ import { BackButton } from "../components/backButton";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import ShareIcon from "@mui/icons-material/Share";
 import { AccessTime, Room, Accessible } from "@mui/icons-material";
+import { styled } from '@mui/material/styles';
 
 const styles = {
   cardContainer: {
@@ -76,19 +77,13 @@ const styles2 = {
     verticalAlign: "middle",
     color: "#CE0F69",
   },
-  postularme:{
-    width: "130px",
-    height: "40px",
-    borderRadius: "15px",
-    textTransform: "none",
-    color: "white",
-    backgroundColor: "#CE0F69"
-  },
+
   share: {
     color: "#CE0F69",
     backgroundColor: "#CE0F6924",
-    height: "40px",
-    borderRadius: "50px",
+    width: "50px",
+    height: "50.39px",
+    borderRadius: "25.1px",
   },
   customCardContent: {
     flex: 2,
@@ -106,6 +101,26 @@ const styles2 = {
     },
   },
 };
+
+const CssButton = styled(Button)({
+  backgroundColor: "#CE0F69",
+  color: "white",
+  borderRadius: "30px",
+  padding: "6px 16px",
+  cursor: "pointer",
+  width: "153px",
+  height: "50px",
+  textTransform: "none",
+
+  "&:hover": {
+    backgroundColor: "#B2BAC2",
+  },
+
+  "&:disabled": {
+    backgroundColor: "#D9D8D8",
+    cursor: "default",
+  },
+});
 
 function OffersId() {
   const { id } = useParams();
@@ -195,13 +210,13 @@ function OffersId() {
                     gap: "20px",
                   }}
                 >
-                  <Button
+                  <CssButton
                     onClick={openModalBienvenida}
                     variant="contained"
                     style={styles2.postularme}
                   >
                     Postularme
-                  </Button>
+                  </CssButton>
                   <Button sx={styles2.share}
                   >
                     <ShareIcon sx={{ fontSize: 24, alignSelf: "center" }} />
