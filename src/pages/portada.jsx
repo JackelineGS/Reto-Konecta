@@ -43,7 +43,7 @@ export default function Portada() {
     <Offers />
       </Card>  
       </Card>
-      <BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />
+      {/*<BubbleChat chatflowid="561008a9-fa01-4597-a243-723cae8c2cfb" apiHost="https://konecta-1.onrender.com" />*/}
     </>
   );
 }

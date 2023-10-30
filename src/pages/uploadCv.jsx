@@ -4,11 +4,13 @@ import { UploadFile } from "../components/upload-card";
 import { CreateCvCard } from "../components/create-card";
 import { Card, CardContent, Container } from "@mui/material";
 import { Navbar } from "../components/navbar"
+import { BackButton } from "../components/backButton";
 
 export function UploadCv() {
   return (
     <>
      <Navbar/>
+     <BackButton />
       <CustomizedSteppers />
       <Container style={{
         backgroundColor: 'transparent',

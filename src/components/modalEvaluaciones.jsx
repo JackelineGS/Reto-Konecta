@@ -3,6 +3,7 @@ import { SimpleContainer } from "../components/simpleContainer";
 import { CustomizedSteppers } from "../components/stepper";
 import { Box, Button, Card, CardContent, Typography, ListItem, Container} from "@mui/material";
 import { Navbar } from "../components/navbar"
+import { BackButton } from "./backButton";
 ("Mostrar en la otra vista");
 // import { SuccessAlert } from "../components/successAlert"; 'Modales a mostrar con javascript'
 //import { WarningAlert } from "../components/warningAlert"; idem
@@ -20,12 +21,10 @@ export function ModalEvaluaciones() {
   
     const data = {
       recipientPhoneNumber: "+51925474137",
-      user: "Sandy",
-      trainingDate: "19/09",
-      trainingHour: "13:10 pm",
-      trainer: "Jackeline García",
-      sede: "Av. República de Panamá 4603-4501, Lima 15047"
-    };
+     user: "Postulante",
+     job: "Asistente de comunicaciones",
+     path: "GyQwuk-IGC-TEST-290923"
+      };
   
     const requestOptions = {
       method: 'POST',
@@ -50,10 +49,7 @@ export function ModalEvaluaciones() {
   }
 
  useEffect(() => {
-  window.addEventListener("load", sendWelcomeNotification)
- return () => {
-  window.removeEventListener("load", sendWelcomeNotification);
-};
+  sendWelcomeNotification()
 }, []);
 
 const styles ={
@@ -98,6 +94,7 @@ const styles ={
   return (
     <>
      <Navbar/>
+     <BackButton />
       <CustomizedSteppers />
       <Container  sx={styles.cont}
       >

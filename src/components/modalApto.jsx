@@ -10,6 +10,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { styled } from "@mui/material/styles";
 import { Navbar } from "../components/navbar"
+import { BackButton } from "../components/backButton"
 
 
  'Mostrar en la otra vista'
@@ -155,6 +156,7 @@ export function ModalApto() {
   return (
     <>
      <Navbar/>
+     <BackButton/>
       <CustomizedSteppers />
       <Container sx={styles.continerStyle}>
         <Card sx={styles.mensaje}>
