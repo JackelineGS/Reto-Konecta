@@ -22,6 +22,7 @@ import ModalIdiomas from "./modalIdiomas";
 import { MenuItem } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { WhiteButton } from "../components/whiteButton";
 
 const CssTextField = styled(TextField)({
   display: "block",
@@ -48,6 +49,25 @@ const CssTextField = styled(TextField)({
     },
   },
 });
+
+const CustomPaper = styled(Paper)(({ theme }) => ({
+  width: "840px",
+  overflowY: "scroll",
+  height: "130vh",
+  display: "flex",
+  justifyContent: "center",
+  borderRadius: "10px",
+
+  "&::-webkit-scrollbar": {
+    width: "10px",
+    backgroundColor: "#white",
+    borderRadius: "10px",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    backgroundColor: "#B2B4B2",
+    borderRadius: "10px",
+  },
+}));
 
 const styleAñadir = {
   color: "#CE0F69",
@@ -120,12 +140,9 @@ const CssButton2 = styled(Button)({
 });
 
 const styleAutocomplete = {
-  margin: "5px",
-  width: "624px",
+  width: "565px",
   height: "56px",
-  borderRadius: "8px",
   display: "block",
-  marginBottom: "1.5rem",
 };
 
 export default function Formulario() {
@@ -290,7 +307,7 @@ export default function Formulario() {
         }}
       >
         <Grid position="static" item xs={3}>
-          <Paper
+          <CustomPaper
             style={{
               overflowY: "scroll",
               height: "80vh",
@@ -300,11 +317,10 @@ export default function Formulario() {
               <Card
                 sx={{ mt: 3 }}
                 style={{
+                  width: "600px",
                   backgroundColor: "#FFF",
                   padding: "1rem",
-                  borderRadius: "24px",
-                  width: "664px",
-                  height: "400px",
+                  borderRadius: "10px",
                 }}
               >
                 <div
@@ -376,14 +392,13 @@ export default function Formulario() {
                 </CardContent>
               </Card>
               <Card
-                sx={{ mt: 3 }}
-                style={{
-                  backgroundColor: "#FFF",
-                  padding: "1rem",
-                  borderRadius: "24px",
-                  width: "664px",
-                  height: "530px",
-                }}
+                 sx={{ mt: 3 }}
+                 style={{
+                   width: "600px",
+                   backgroundColor: "#FFF",
+                   padding: "1rem",
+                   borderRadius: "10px",
+                 }}
               >
                 <div
                   style={{
@@ -452,14 +467,8 @@ export default function Formulario() {
                         marginTop: "10px",
                       }}
                     >
-                      <CssButton2 variant="contained" type="button">
-                        Cancelar
-                      </CssButton2>
-                      <CssButton
-                        variant="contained"
-                        type="button"
-                        onClick={handleInputChange}
-                      >
+                      <CssButton2 variant="contained" type="button"> Cancelar </CssButton2>
+                      <CssButton variant="contained" type="button" onClick={handleInputChange}>
                         Guardar
                       </CssButton>
                     </div>
@@ -467,19 +476,21 @@ export default function Formulario() {
                 </CardContent>
               </Card>
               <Card
-                sx={{ mt: 3 }}
-                style={{
-                  backgroundColor: "#FFF",
-                  padding: "1rem",
-                  borderRadius: "24px",
-                  width: "664px",
-                  height: "334px",
-                }}
+                 sx={{ mt: 3, mb: 3 }}
+                 style={{
+                   width: "600px",
+                   backgroundColor: "#FFF",
+                   padding: "1rem",
+                   borderRadius: "10px",
+                 }}
               >
                 <Typography sx={typoEncabezado}>Experiencia Laboral</Typography>
                 <CardContent>
                   <Accordion>
-                    <AccordionSummary>
+                    <AccordionSummary style={{
+                      border: '1px',
+                      borderRadius: '8px'
+                    }}>
                       <FormControlLabel
                         value="Con experiencia"
                         control={
@@ -488,14 +499,34 @@ export default function Formulario() {
                             onChange={handleOptionChange}
                             value="Con experiencia"
                           />
+                        } label={
+                          <div>
+                            <Typography
+                              fontSize='15px'
+                              fontWeight='bold'
+                              color='#181818'
+                            >
+                              Con experiencia
+                            </Typography>
+                            <Typography fontSize='14px' color='#545454'>
+                              Experiencia en otro rubro, call, etc.
+                            </Typography>
+                          </div>
                         }
-                        label="Con experiencia"
                       />
                     </AccordionSummary>
                   </Accordion>
                 </CardContent>
+
+
                 <CardContent>
                   <Accordion>
+                    <AccordionSummary 
+                    style={{
+                      border: '1px',
+                      borderRadius: '8px'
+                    }}
+                    >
                     <FormControlLabel
                       value="Sin experiencia"
                       control={
@@ -505,20 +536,33 @@ export default function Formulario() {
                           value="Sin experiencia"
                         />
                       }
-                      label="Sin experiencia"
+                      label={
+                        <div>
+                          <Typography
+                            fontSize='15px'
+                            fontWeight='bold'
+                            color='#181818'
+                          >
+                            Sin experiencia
+                          </Typography>
+                          <Typography fontSize='14px' color='#545454'>
+                            Egresados, estudiantes, etc.
+                          </Typography>
+                        </div>
+                      }
                     />
+                    </AccordionSummary>
                   </Accordion>
                 </CardContent>
               </Card>
               <Card
-                sx={{ mt: 3, mb: 3 }}
-                style={{
-                  backgroundColor: "#FFF",
-                  padding: "1rem",
-                  borderRadius: "24px",
-                  width: "664px",
-                  height: "356px",
-                }}
+                 sx={{ mt: 3, mb: 3 }}
+                 style={{
+                   width: "600px",
+                   backgroundColor: "#FFF",
+                   padding: "1rem",
+                   borderRadius: "10px",
+                 }}
               >
                 <CardContent>
                   <ModalCrearExp
@@ -535,7 +579,13 @@ export default function Formulario() {
                           justifyContent: "space-between",
                         }}
                       >
+                        <div 
+                         style={{
+                          width: "100%",
+                          marginTop: "15px",
+                        }}>
                         <Typography sx={typoLetra}> INSTITUCIÓN</Typography>
+                        </div>
                         <Button
                           sx={styleAñadir}
                           onClick={() => openModal("isModalInstitucion")}
@@ -556,9 +606,16 @@ export default function Formulario() {
                           justifyContent: "space-between",
                         }}
                       >
+                         <div
+                          style={{
+                            width: "100%",
+                            marginTop: "15px",
+                          }}
+                          >
                         <Typography sx={typoLetra}>
                           CURSOS / ESPECIALIZACIONES
                         </Typography>
+                        </div>
                         <Button
                           sx={styleAñadir}
                           onClick={() => openModal("isModalCursos")}
@@ -580,7 +637,14 @@ export default function Formulario() {
                           justifyContent: "space-between",
                         }}
                       >
+                        <div
+                          style={{
+                            width: "100%",
+                            marginTop: "15px",
+                          }}
+                        >
                         <Typography sx={typoLetra}>HABILIDADES</Typography>
+                        </div>
                         <Button
                           sx={styleAñadir}
                           onClick={() => openModal("isModalHabilidades")}
@@ -601,7 +665,14 @@ export default function Formulario() {
                           justifyContent: "space-between",
                         }}
                       >
+                         <div
+                          style={{
+                            width: "100%",
+                            marginTop: "15px",
+                          }}
+                        >
                         <Typography sx={typoLetra}>IDIOMAS</Typography>
+                        </div>
                         <Button
                           sx={styleAñadir}
                           onClick={() => openModal("isModalIdiomas")}
@@ -619,12 +690,23 @@ export default function Formulario() {
                 </CardContent>
               </Card>
             </List>
-          </Paper>
+          </CustomPaper>
         </Grid>
+        <div style={{
+            width: '100%',
+            height: '70px',
+            alignContent: 'center',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'row',
+            display: 'flex',
+          }}>
+        <WhiteButton/>
         <Button
           variant="contained"
           style={{
             width: "200px",
+            marginLeft: '10rem',
             textTransform: "none",
             color: "white",
             backgroundColor: isHovered ? "#ce0f6840" : "#CE0F69",
@@ -635,6 +717,9 @@ export default function Formulario() {
         >
           Siguiente
         </Button>
+
+        </div>
+        
       </Grid>
     </>
   );

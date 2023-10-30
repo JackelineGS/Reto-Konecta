@@ -20,7 +20,6 @@ import ListaPostulantes from "./admin/Adcomponents/listaPostulantes";
 import Tabla from "./admin/Adcomponents/tabla";
 import ModalExisteValidacion from "./components/modalExisteValidacion";
 import Portada from "./pages/portada";
-
 /*import ModalCrearExp from "./components/modalCrearExp";
 import ModalCursos from './components/modalCursos';
 import ModalHabilidades from './components/modalHabilidades';
@@ -55,6 +54,7 @@ function App() {
           <Route path='/cargarCv/:id' element={<UploadCv />}></Route>
           <Route path='/formulario/:id' element={<FormularioCv />}></Route>
           <Route path='/tabla' element={<Tabla/>}></Route>
+          
         </Routes>
       </BrowserRouter>
     </>

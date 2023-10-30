@@ -9,19 +9,6 @@ export function FormularioCv() {
     <>
       <CustomizedSteppers />
       <Formulario />
-      <Grid
-        container
-        width='100%'
-        direction='row'
-        justifyContent='center'
-        gap='440px'
-        style={{
-          margin: "2rem",
-        }}
-      >
-        <WhiteButton />
-        <PinkButton />
-      </Grid>
     </>
   );
 }

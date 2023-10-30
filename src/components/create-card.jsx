@@ -37,8 +37,7 @@ export function CreateCvCard() {
     <Container style={{
       margin: '0'
     }}>
-    <Card style={cardStyles}>
-      <Link to='/formulario' style={linkStyles}/>
+    <Card style={cardStyles} onClick={openmodal}>
         <label style={labelStyles}>
           <Typography variant='h5' component='div' textAlign='center'>
             Crear mi CV

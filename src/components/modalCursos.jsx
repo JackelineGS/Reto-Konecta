@@ -182,7 +182,7 @@ export default function ModalCursos(props) {
                 <MenuItem value="avanzado">Avanzado</MenuItem>
               </Select>
               <div style={{ float: "right", marginLeft: 0, marginTop: "60px" }}>
-                <CssButton2 variant="contained" type="submit">
+                <CssButton2 variant='contained' type='button' onClick={onClose}>
                   Cancelar
                 </CssButton2>
                 <CssButton 
