@@ -22,10 +22,13 @@ const styles = {
 
   },
   cardAcordion: {
-    display: "flex",
+    width: "80%",
     flexDirection: "column",
-    backgroundColor: "white",
-    margin: '0.3rem'
+    alingItems: "center",
+    alignContent: "center",
+    display: "flex",
+    backgroundColor: 'transparent',
+    borderRadius: '12px'
   },
   cardDetails :{
     display: "flex",
@@ -95,8 +98,11 @@ const styles = {
       height: "40px",
       borderRadius: "8px",
       padding: "11px",
-      width:'70%',
-      margin: '1.5rem'
+      width:'80%',
+      margin: '1.5rem',
+      alingItems: 'center',
+      justifyContent: 'center',
+      display: 'flex'
   }
 };
 
@@ -141,13 +147,12 @@ function Offers() {
       {offers.map((offer, index) => (
         <Grid item xs={12} sm={6} md={4} key={index} style={styles.secondGrid}  
         >
-          <Accordion style={styles.cardContainer}>
-          <AccordionSummary style={styles.cardAcordion}
+          
+          <Card style={styles.cardAcordion}
              expandIcon={<ExpandMoreIcon />}
              aria-controls="panel1a-content"
              id="panel1a-header"
           >
-          
             <CardContent>
               <Typography variant="h6" style={styles.cardTitle}>{offer.title}</Typography>
               <Typography color='#CE0F69' fontSize='12px' textAlign='left' fontFamily= 'Barlow' fontWeight='500'>
@@ -169,15 +174,21 @@ function Offers() {
               </div>
               </div >
               </CardContent>
-              </AccordionSummary>
-
-              <AccordionDetails style={styles.cardDetails}>
+              <div style={{
+                margin: '.5rem',
+                padding: '26px',
+                alingItems: 'center',
+                alignContent: 'center',
+                textAlign: 'justify', 
+                display: 'flex',
+                flexDirection: "column",
+              }}> 
               <Typography sx={{ fontSize: "14px", color: "#181818", marginBottom: "20px" }}
                 >{offer.content}
               </Typography>
                 <Button onClick={() => navigate(`/ofertas/${offer.id}`)}  variant="contained" style={styles.buttonConoce} >Conoce más</Button>
-              </AccordionDetails>
-              </Accordion>
+                </div>
+                </Card>
         </Grid>
       ))}
     </Grid>
