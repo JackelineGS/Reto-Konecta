@@ -59,6 +59,8 @@ const styles = {
     height: '48px'
   }, 
   cardTitle: {
+    fontFamily: "Barlow",
+    fontWeight: "700",
     color: '#615E9B',
     fontSize: '24px',
     height: '80px'
@@ -148,7 +150,7 @@ function Offers() {
           
             <CardContent>
               <Typography variant="h6" style={styles.cardTitle}>{offer.title}</Typography>
-              <Typography color='#CE0F69' fontSize='12px' textAlign='left'>
+              <Typography color='#CE0F69' fontSize='12px' textAlign='left' fontFamily= 'Barlow' fontWeight='500'>
               Hace 4 días
               </Typography>
               <div style={{flexDirection: "row", display: 'flex', height:'40px'}}>

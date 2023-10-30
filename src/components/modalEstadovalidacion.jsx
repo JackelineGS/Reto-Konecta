@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Typography, Modal, Box, Button, Grid, Container } from '@mui/material'
-import estado from "../assets/img/estado.png";
+import estado from "../assets/img/Artboard2.png";
 import { styled } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
 import { BubbleChat } from 'flowise-embed-react'
@@ -105,10 +105,12 @@ export default function ModalEstadoValidacion() {
         >
             <Container
                     style={{
-                        alignItems:'cente'
+                        alignItems:'center',
+                        justifyContent: 'center',
+                        width: '50%'
                     }}
                 >
-                <img src={estado} alt='konecta-logo' className='logo logo-2' width='300px' height='215px' />
+                <img src={estado}/>
                 </Container>
                 <Typography sx={styleLetra}>Validación</Typography>
                 <Typography sx={styleSubtitle}>Hola Postulante,  validamos exitosamente tus datos  personales y puedes continuar.</Typography>
