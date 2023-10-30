@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useEffect } from "react";
 import { SimpleContainer } from "../components/simpleContainer";
 import { CustomizedSteppers } from "../components/stepper";
 import { Box, Button, Card, CardContent, Typography} from "@mui/material";
@@ -11,10 +11,55 @@ import { Box, Button, Card, CardContent, Typography} from "@mui/material";
 //import ModalCursos from "../components/modalCursos";
 
 export function ModalEvaluaciones() {
+
+
+  //Mensaje  // SOLICITUD POST BIENVENIDO
+  async function sendWelcomeNotification() {
+    const host = 'https://iezopofihj.execute-api.us-east-1.amazonaws.com/dev/notifications/evaluations';
+  
+    const data = {
+      recipientPhoneNumber: "+51925474137",
+      user: "Sandy",
+      trainingDate: "19/09",
+      trainingHour: "13:10 pm",
+      trainer: "Jackeline García",
+      sede: "Av. República de Panamá 4603-4501, Lima 15047"
+    };
+  
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+  
+    try {
+      const response = await fetch(host, requestOptions);
+      console.log(response)
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      console.log('Solicitud exitosa');
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
+ useEffect(() => {
+  window.addEventListener("load", sendWelcomeNotification)
+ return () => {
+  window.removeEventListener("load", sendWelcomeNotification);
+};
+}, []);
+
+
   return (
     <>
       <CustomizedSteppers />
-      <SimpleContainer>
+      <SimpleContainer  >
         <Box>
           <Typography variant="h7"> Evaluaciones</Typography>
           <br />

@@ -10,7 +10,7 @@ const App = () => {
 };
 App()
 
-export function Portada() {
+export default function Portada() {
   return (
     <>
     <Card style={{

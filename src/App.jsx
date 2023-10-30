@@ -7,7 +7,7 @@ import { PagesOffers } from "./pages/pagesOffers";
 import OffersId from "./funciones/offersId";
 import ModalBienvenida from "./components/modalBienvenida";
 import ModalValidarDatos from "./components/modalValidarDatos";
-import ModalEstadoValidacion from "./components/modalEstadovalidacion";
+import ModalEstadoValidacion from "./components/modalEstadoValidacion";
 import ModalValidado from "./components/modalValidado"
 import { ModalApto } from "./components/modalApto";
 import { ModalNoApto } from "./components/modalNoApto";
@@ -18,14 +18,8 @@ import Formulario from "./components/formulario";
 import  Ofertas  from "./components/offers";
 import ListaPostulantes from "./admin/Adcomponents/listaPostulantes";
 import Tabla from "./admin/Adcomponents/tabla";
-import {Portada} from "./pages/portada"
-// import BasicModal from "./components/basicModal";
 import ModalExisteValidacion from "./components/modalExisteValidacion";
-// import { ModalNoApto } from "./components/modalNoApto";
-// import { ModalEvaluaciones } from "./components/modalEvaluaciones"
-// import Formulario from "./components/formulario";
-
-
+import Portada from "./pages/portada";
 
 /*import ModalCrearExp from "./components/modalCrearExp";
 import ModalCursos from './components/modalCursos';
@@ -59,21 +53,8 @@ function App() {
           <Route path="/modal/validando/:id/noapto" element={<ModalNoApto/>}></Route>
           <Route path="/modal/validando/:id/apto/evaluaciones" element={<ModalEvaluaciones/>}></Route>
           <Route path='/cargarCv/:id' element={<UploadCv />}></Route>
-          <Route path='/formulario' element={<Formulario />}></Route>
-          <Route path='/modal/bienvenida' element={<ModalBienvenida />}></Route>
-          <Route
-            path='/modal/bienvenida/validacion'
-            element={<ModalValidarDatos />}
-          ></Route>
-          <Route
-            path='/modal/validado'
-            element={<ModalEstadoValidacion />}
-          ></Route>
-          <Route path='/cargarCv' element={<UploadCv />}></Route>
-          <Route path='/formulario' element={<FormularioCv />}></Route>
-          <Route path='/ofertas' element={<PagesOffers />}></Route>
-          {/* <Route path='/listaPostulantes' element={<ListaPostulantes />}></Route>
-          <Route path='/tabla' element={<Tabla />}></Route> */}
+          <Route path='/formulario/:id' element={<FormularioCv />}></Route>
+          <Route path='/tabla' element={<Tabla/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

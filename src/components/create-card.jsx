@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/material";
@@ -26,12 +26,19 @@ export function CreateCvCard() {
     cursor: "pointer",
   };
 
+  const {id} = useParams();
+  const navigate = useNavigate()
+
+  const openmodal = () => {
+    navigate(`/formulario/${id}`)
+  }
+
   return (
     <Container style={{
       margin: '0'
     }}>
     <Card style={cardStyles}>
-      <Link to='/formulario' style={linkStyles}>
+      <Link to='/formulario' style={linkStyles}/>
         <label style={labelStyles}>
           <Typography variant='h5' component='div' textAlign='center'>
             Crear mi CV
@@ -40,7 +47,6 @@ export function CreateCvCard() {
             Podrás crearlo rápidamente.
           </Typography>
         </label>
-      </Link>
     </Card>
     </Container>
   );

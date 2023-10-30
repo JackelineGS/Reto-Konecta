@@ -49,6 +49,16 @@ export function ModalNoApto() {
     navigate(`/`);
   };
 
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <>
       <CustomizedSteppers />
@@ -75,7 +85,15 @@ export function ModalNoApto() {
             </Grid>
           ))}
         </SimpleContainer>
-        <Button onClick={modalEvaluacion}>Ver más Ofertas</Button>
+        <Button variant='contained'
+        style={{
+          width: "200px",
+          textTransform: "none",
+          color: "white",
+          backgroundColor: isHovered ? "#ce0f6840" : "#CE0F69",
+        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave} onClick={modalEvaluacion}>Ver más Ofertas</Button>
       </SimpleContainer>
       <WhiteButton />
     </>
