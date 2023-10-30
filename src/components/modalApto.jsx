@@ -152,7 +152,7 @@ export function ModalApto() {
     },
   });
 
-
+  
   return (
     <>
      <Navbar/>

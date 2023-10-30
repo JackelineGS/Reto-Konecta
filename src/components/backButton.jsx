@@ -1,7 +1,8 @@
 import IconButton from "@mui/material/IconButton";
 import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
 
-export function BackButton() {
+export function BackButton () {
+
   const buttonStyles = {
     color: "#002855",
     textAlign: "center",

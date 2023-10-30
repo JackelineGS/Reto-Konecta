@@ -19,7 +19,7 @@ export function UploadFile() {
   const [upload, setUpload] = useState(false);
   // const [cvText,setCvText] = useState(null)
   pdfjsLib.GlobalWorkerOptions.workerSrc =
-    "../../node_modules/pdfjs-dist/build/pdf.worker.js";
+  `//unpkg.com/pdfjs-dist@${pdfjsLib.version}/legacy/build/pdf.worker.min.js`;
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showWarningAlert, setShowWarningAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
@@ -46,6 +46,7 @@ export function UploadFile() {
       // console.log(data,'aqui llego');
       const response = await fetch(
         "https://konecta-1.onrender.com/api/v1/prediction/c7913cb8-def5-4393-a7b9-3717e2646d95",
+        
         {
           method: "POST",
           headers: {

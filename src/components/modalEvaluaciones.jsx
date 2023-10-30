@@ -110,13 +110,13 @@ const styles ={
             rendir las evaluaciones del puesto, por favor da click en el
             siguiente enlace: <br/>
             <a
-        href="https://candidato.evaluar.com/signup/515380url=process%2Fc1167b9c-638e-4990-8613-26952b818a10/detail"
+        href="https://candidato.evaluardev.com/GyQwuk-IGC-TEST-290923#!/signin "
         sx={{
           color: "blue",
           textDecoration: "underline",
         }}
       >
-        https://candidato.evaluar.com/signup/515380url=process%2Fc1167b9c-638e-4990-8613-26952b818a10/detail
+        https://candidato.evaluardev.com/GyQwuk-IGC-TEST-290923#!/signin
       </a>
         
         <Typography sx={styles.contenido}>
