@@ -186,7 +186,6 @@ export function ModalNoApto() {
                 margin: '.5rem',
                 alignItems: 'center',
                 justifyContent: 'center',
-                display: 'flex'
               }}>
           <Grid container spacing={2}>
           {detailOffer.map((offer, index) => (
