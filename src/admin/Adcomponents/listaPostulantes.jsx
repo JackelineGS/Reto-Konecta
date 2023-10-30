@@ -165,7 +165,7 @@ const requestData = {
       flexDirection: "column",
       justifyContent: "center",
       borderRadius: "15px",
-      width: "950px",
+      width: "1200px",
       marginLeft: "40px",
       marginTop: "30px",
     }}
