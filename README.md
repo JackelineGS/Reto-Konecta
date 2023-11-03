@@ -1,8 +1,31 @@
-# React + Vite
+# RETO KONECTA  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Índice
 
-Currently, two official plugins are available:
+- [1. Talent Fest](#1-talent-fest)
+- [2. Prototipos](#2-prototipos)
+- [3. Historias de Usuario](#3-historias-de-usuario)
+- [4. Herramientas](#-herramientas)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh.
+
+## 1. Talent Fest 
+
+## 2. Prototipos
+
+## 3. Historias de Usuario
+
+## 4. Herramientas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
