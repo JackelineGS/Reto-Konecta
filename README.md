@@ -56,7 +56,7 @@ Para realizar el proyecto la empresa dispuso del prototipo, el cual está dividi
 
 ![RetoKonecta.detalles](src/assets/img/evaluacion_exitosa.PNG)
 
-🌱 Oferta fallida/exitosa
+🌱 Oferta fallida
 
 ![RetoKonecta.detalles](src/assets/img/evaluacion_fallida.PNG)
 
@@ -70,7 +70,8 @@ Así mismo el diseño completo fue desarrollado en [Figma](https://www.figma.com
 
 ## 4. Historias de Usuario
 
-Historia de Usuario 2
+**Historia de Usuario 2**
+
 Como Selector puedo visualizar la lista de postulantes de modo que pueda hacer seguimiento a las postulaciones.
 
 Criterios de aceptación:
@@ -81,7 +82,8 @@ Criterios de aceptación:
 4. Se enviará una notificación al postulante cuando no haya realizado sus evaluaciones por whatsapp según el siguiente estado: “Re-contactado” .
 5. Se enviará una notificación al postulante por whatsapp cuando se confirme su capacitación con un mensaje de bienvenida según el siguiente estado: “Confirmado a capacitación”.
 
-Historia de Usuario 3
+**Historia de Usuario 3**
+
 Como Postulante puedo ver ofertas laborales de modo que pueda ordenar, filtrar y ver el detalle de cada una de ellas. 
 
 Criterios de aceptación:
@@ -90,7 +92,8 @@ Criterios de aceptación:
 3. Cada card de la convocatoria contendrá lo siguiente: título, fecha, sede, modalidad, apto para todos y descripción de la oferta ( solo 140 caracteres en desktop y 120 en móvil ), asimismo tendrá un botón: “Conoce más”, que permitirá redirigir a una vista detalle, donde se encontrará mayor información de la oferta.
 4. El filtrado de la información debe ser manejado en el lado frontend, ya que el servicio simplemente proporciona toda la información disponible.
 
-Historia de Usuario 4
+**Historia de Usuario 4**
+
 Como Postulante puedo ver detalles de la oferta de modo que pueda compartirla y posteriormente aplicar. 
 
 Criterios de aceptación:
@@ -100,7 +103,8 @@ Criterios de aceptación:
 4. Se debe mostrar las ofertas similares ( misma categoría de la oferta seleccionada) en la sección lateral izquierda (Solo el la versión desktop).
 5. El detalle de cada oferta debe ser manejado en el lado frontend, ya que el servicio simplemente proporciona toda la información disponible, asimismo el filtrado por categoría similar.
 
-Historia de Usuario 5
+**Historia de Usuario 5**
+
 Como postulante puedo aplicar a la oferta de modo que pueda cargar mi cv o dejar mis datos
 
 Criterios de aceptación:
