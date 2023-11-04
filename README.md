@@ -18,10 +18,10 @@
 ## 2. Revelación de equipo
 
 Tres días antes de la Hackathon, cada empresa se reunió con su squad, donde el equipo al que pertenecí fue al equipo 1 de la compañía Konecta
-![FoodMatch.prototipo_baja_fidelidad-mobile](src/assets/img/equipo.png)
+![RetoKonecta.equipo](src/assets/img/equipo.PNG)
 
 Aqui se muestra a los equipos 1 y 2 reunidos 
-![FoodMatch.prototipo_baja_fidelidad-mobile](src/assets/img/konecta_team.png)
+![RetoKonecta.dos_equipos](src/assets/img/konecta_team.PNG)
 
 ## 3. Prototipos
 
