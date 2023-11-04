@@ -136,8 +136,19 @@ f. Guardar datos del postulante
 
 ## 5. TECNOLOGÍAS
 
-- REACT
-- MATERIAL UI
+💻 **REACT**
+
+![RetoKonecta.react](src/assets/img/React-Symbol.png)
+
+💻 **JAVASCRIPT**
+
+![RetoKonecta.javascript](src/assets/img/javascript-logo-1.png)
+
+💻 **MATERIAL UI**
+
+![RetoKonecta.mui](src/assets/img/mui.png)
+
+💻 **ENDPOINTS**
 - [ENDPOINTS](https://documenter.getpostman.com/view/17741188/2s9YJez2Bq#5c4bd7fc-95fc-4388-90a4-ec28c872c0d4)
 
 
