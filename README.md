@@ -26,9 +26,9 @@ La empresa Konecta dispuso de dos equipos, siendo el presente proyecto desarroll
 
 ## 3. Prototipos
 
-Para realizar el proyecto la empresa dispuso de un prototipo el cual fue revisado y comentado por el equipo de las UX Designer, este puede ser visualizado en [Figma](https://www.figma.com/file/4KNUPIHBfQ9rbqWJUz3ke6/Hackathon-Laboratoria-%F0%9F%A9%B7%F0%9F%92%9B?type=design&node-id=0-1&mode=design&t=GTegUlktvrbvo5LB-0)
+Para realizar el proyecto la empresa dispuso de un prototipo, el cual fue revisado y comentado por el equipo de las UX Designer. El diseño del proyecto puede ser visualizado en [Figma](https://www.figma.com/file/4KNUPIHBfQ9rbqWJUz3ke6/Hackathon-Laboratoria-%F0%9F%A9%B7%F0%9F%92%9B?type=design&node-id=0-1&mode=design&t=GTegUlktvrbvo5LB-0)
 
-Las principales secciones trabajadas en el proyecto fueron:
+**Las principales secciones trabajadas en el proyecto fueron:**
 
 🌱 Presentación de las ofertas laborales
 
