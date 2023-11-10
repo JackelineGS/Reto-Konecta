@@ -139,7 +139,7 @@ f. Guardar datos del postulante
 💻 **HERRAMIENTAS**
 <p align="left"> <p>React</p><a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/></a> <p>JavaScript</p> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/></a> <p>Material UI</p><a href="https://mui.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/material-ui-1.svg" alt="Material UI" width="40" height="40"/></a> <p>Figma</p><a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/></a> <p>Firebase</p> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/></a> <p>Git</p><a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> </p>
 
-💻 **ENDPOINTS**
+💻 **DOCUMENTACIÓN**
 - [Documentación de los servicios](https://documenter.getpostman.com/view/17741188/2s9YJez2Bq#5c4bd7fc-95fc-4388-90a4-ec28c872c0d4)
 
 
